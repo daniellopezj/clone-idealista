@@ -7,10 +7,10 @@ const Nav = () => {
     <div className={navStyles.main}>
          <Image
             className={navStyles.logo}
-            src="/next.svg"
+            src="/idealista-logo.svg"
             alt="Next.js Logo"
-            width={180}
-            height={37}
+            width={300}
+            height={70}
             priority
           />
       <span> icon </span>
