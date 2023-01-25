@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: auto;
+  max-width: var(--max-width);
+
+}
+
+.logo {
+  position: relative;
+}
