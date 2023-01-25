@@ -1,8 +1,8 @@
 import React from 'react'
-import navStyles from '@/components/common/nav/Nav.module.css'
+import navStyles from '@/components/common/navbar/Navbar.module.css'
 import Image from 'next/image'
 
-const Nav = () => {
+const Navbar = () => {
   return (
     <div className={navStyles.main}>
          <Image
@@ -18,4 +18,4 @@ const Nav = () => {
   )
 }
 
-export default Nav
+export default Navbar
