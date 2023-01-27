@@ -1,12 +1,12 @@
 import React from 'react'
-import navStyles from '@/components/common/navbar/Navbar.module.css'
+import localStyles from '@/components/common/navbar/Navbar.module.css'
 import Image from 'next/image'
 
 const Navbar = () => {
   return (
-    <div className={navStyles.main}>
+    <div className={localStyles.main}>
          <Image
-            className={navStyles.logo}
+            className={localStyles.logo}
             src="/idealista-logo.svg"
             alt="Next.js Logo"
             width={300}

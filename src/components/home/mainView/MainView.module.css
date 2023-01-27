@@ -1,0 +1,10 @@
+
+.containerMainView{
+position: relative;
+}
+.customImage{
+  background-size: cover;
+  justify-content: center;
+  width: 100%;
+  height: 500;
+}
