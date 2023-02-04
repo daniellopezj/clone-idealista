@@ -1,0 +1,53 @@
+
+.containerCard{
+  margin: 5rem 3rem;
+  display: flex;
+  align-items: flex-start;
+  font: var(--main-font);
+}
+
+.containerPicture{
+  height: 320px;
+  overflow: hidden;
+  width: 75%;
+  margin-top: 2rem;
+}
+  .customImage{
+    background-size: cover;
+    justify-content: center;
+    width: 100%;
+  
+  }
+
+.cardMessage{
+  width:27rem;
+  padding: 1rem;
+  margin-left: -4rem;
+  background-color: white;
+  padding-bottom: 2rem;
+  border: solid 0.0625rem #E5E6E1;
+  border-radius: 0.125rem;
+  box-shadow: 0 0.0625rem 0.125rem 0 rgb(102 102 100 / 24%);
+  box-sizing: border-box;
+}
+
+.cardTitle{
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.cardParagrah{
+  margin-bottom: 1rem;
+}
+
+.cardLink{
+  cursor: pointer;
+  font-weight: bold;
+  color: #145BC7;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.cardLink:hover{
+  text-decoration: underline;
+}
