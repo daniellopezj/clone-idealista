@@ -12,13 +12,25 @@
   width: 75%;
   margin-top: 2rem;
 }
-  .customImage{
-    background-size: cover;
-    justify-content: center;
-    width: 100%;
-  
-  }
 
+
+
+.customImage{
+  background-size: cover;
+  justify-content: center;
+  width: 100%; 
+}
+
+.inverseArticle {
+  flex-direction:row-reverse ;
+}
+
+.inverseCardMessage{
+margin-left: 0 !important;
+margin-right: -4rem;
+z-index: 2;
+
+}
 .cardMessage{
   width:27rem;
   padding: 1rem;
