@@ -2,26 +2,26 @@ import React from 'react'
 import localStyles from '@/components/home/cardHome/CardHome.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
+import {CardInfo} from '@/types/general.types'
 
-
-const CardHome = () => {
+const CardHome = (props:CardInfo) => {
   return (
-    <article className={localStyles.containerCard}>
+    <article className={`${localStyles.containerCard} ${props.id % 2 === 0 ? localStyles.inverseArticle : ''}`}>
     <picture className={localStyles.containerPicture}>
      <Image
       className={localStyles.customImage}
-      src="/rent.jpg"
+      src={props.srcImage}
       alt="Picture of the author"
       width={600}
       height={380}
       />
       </picture>    
-    <div className={localStyles.cardMessage}>
+    <div className={`${localStyles.cardMessage}   ${props.id % 2 === 0 ? localStyles.inverseCardMessage : ''}`}>
       <h3 className={localStyles.cardTitle}>
-        Casas rurales en España, Italia y Portugal para resguardarse del frio
+        {props.title}
       </h3>
-      <p className={localStyles.cardParagrah}>Todos queremos vacaciones y desconectar del día a día, ya sea en la playa, montaña o ciudad. ¿Te vas a resistir a una escapada rural? Chimenea, barbacoa, jardín, piscina… tú eliges.</p>
-      <Link className={localStyles.cardLink} href="/">Ver alquiler vacacional para invierno</Link>
+      <p className={localStyles.cardParagrah}>  {props.description}</p>
+      <Link className={localStyles.cardLink} href={props.link}>{props.linkMessage}</Link>
     </div>
 
     </article>
