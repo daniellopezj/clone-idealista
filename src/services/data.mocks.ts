@@ -1,4 +1,5 @@
-import { CardInfo } from "@/types/general.types";
+import { CardInfo, SocialIcon } from "@/types/general.types";
+import { faLinkedinIn, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 export const cardsHome: CardInfo[] = [
 
@@ -35,4 +36,25 @@ export const cardsHome: CardInfo[] = [
     linkMessage: 'Ver alquiler vacacional para invierno',
   },
 
+]
+
+export const socialIcons: SocialIcon[] = [
+  {
+    id: 0,
+    icon: faLinkedinIn,
+    link: 'https://www.linkedin.com/in/dani-dev/',
+    color: '#0e76a8'
+  },
+  {
+    id: 1,
+    icon: faGithub,
+    link: 'https://github.com/ldani-dev',
+    color: '#000000'
+  },
+  {
+    id: 2,
+    icon: faTwitter,
+    link: 'https://twitter.com/daniellopezj01',
+    color: '#00ACEE'
+  },
 ]

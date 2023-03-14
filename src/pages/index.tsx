@@ -21,11 +21,8 @@ export default function Home() {
         <Navbar/>
         <MainView/>
         <BodyHome/>
-        aqui la primera vista
-        aqui cualquier cosita bonita
-        el footer y scale
-        <Footer/>
       </div>
+        <Footer/>
     </>
   )
 }
