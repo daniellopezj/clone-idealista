@@ -1,6 +1,7 @@
 :root {
   --max-width: 1250px;
-  --main-font:normal 1rem 'bernino-regular',Verdana,Arial,Geneva,sans-serif
+  --main-font:normal 1rem 'bernino-regular',Verdana,Arial,Geneva,sans-serif;
+  --big-max-width: 1200px;
 }
 
 * {
@@ -18,4 +19,11 @@ body {
 .container{
   margin: auto;
   max-width: var(--max-width);
+}
+
+.main-container {
+  max-width: --big-max-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 92%;
 }
