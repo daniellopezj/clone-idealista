@@ -14,3 +14,13 @@
   justify-content: center;
   font: var(--main-font);
 }
+
+.searchContainerLine{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.customInput{
+opacity: 0;
+position: absolute;
+}
