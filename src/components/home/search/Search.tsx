@@ -4,20 +4,20 @@ const Search = () => {
 
   const optionsRent =[
     {
-      id:0,
-      value:'sale',
-      text:'vender'
+      id:1,
+      value:'rent',
+      text:'Alquilar'
     },
     {
       id:0,
-      value:'rent',
-      text:'Alquilar'
-    }
+      value:'sale',
+      text:'Comprar'
+    },
   ]
 
 
   const [query, setQuery] = useState("");
-  const [selectTypeService, setSelectTypeService] = useState("");
+  const [selectTypeService, setSelectTypeService] = useState("rent");
 
   const handleSelectType = (event: any) => {
     setSelectTypeService(event.target.value);
@@ -33,29 +33,34 @@ const Search = () => {
 
   return (
     <div className={localStyles.mainContainerSearch}>
-      <div className={localStyles.title}>
-        <h2>¿Realmente compras algo para toda la vida?</h2>
-      </div>
-      <div className={localStyles.searchContainerLine}>
-        <div>
-         {optionsRent.map((option)=>(
-          <label key={option.id} htmlFor={option.value}>
-            <input
-              className={localStyles.customInput}
-              id={option.value}
-              type="radio"
-              value={option.value}
-              checked={selectTypeService ===  option.value}  
-              onChange={handleSelectType}
-            />
-            {option.text}
-          </label>
-         ))}
+      <div className={localStyles.contentSearch}>
+        <div className={localStyles.title}>
+          <h2>¿Realmente compras algo para toda la vida?</h2>
         </div>
-        <input type="text" value={query} onChange={handleQueryChange} />
-        <button onClick={handleButtonClick}>Go</button>
+        <div className={localStyles.searchContainerLine}>
+          <div className={localStyles.containerRadios}>
+          {optionsRent.map((option)=>(
+            <label className={`${localStyles.customLabels} ${selectTypeService=== option.value?localStyles.selectLabel:''}`} key={option.id} htmlFor={option.value}>
+              <input
+                className={localStyles.customInputRadio}
+                id={option.value}
+                type="radio"
+                value={option.value}
+                checked={selectTypeService ===  option.value}  
+                onChange={handleSelectType}
+              />
+              {option.text}
+            </label>
+          ))}
+          </div>
+          <input 
+          className={localStyles.customInputSearch}
+          type="text" 
+          placeholder='Escribe dónde buscas'
+          value={query} onChange={handleQueryChange} />
+          <button className={localStyles.customButton} onClick={handleButtonClick}>Buscar</button>
+        </div>
       </div>
-      <h1>{query}</h1>
     </div>
   )
 }
