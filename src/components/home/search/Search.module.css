@@ -53,11 +53,12 @@
 }
 
 .customInputSearch{
-  font: var(--main-font);
-  font-weight: 600;
+  border: none;
+  outline: none;
   margin: 0 2%;
+  font-size: 1.05rem;
   width: -webkit-fill-available;
-padding: 0 40px 0 35px;
+  padding: 0 40px 0 35px;
 }
 
 .customButton{

@@ -48,7 +48,7 @@ const Footer = () => {
           <div className={localStyles.footerLastLine}>
           <div className={localStyles.footerCopyRight}>
             &copy; Copyright 2023,
-            <span>  Creado por López </span>
+            <span>  Creado por </span>
             <Link className={localStyles.footerPersonalLink} href="https://github.com/ldani-dev" target="_blank">
               Daniel López
             </Link>

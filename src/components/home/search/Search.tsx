@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import localStyles from '@/components/home/search/Search.module.css'
 const Search = () => {
-
   const optionsRent =[
     {
       id:1,
@@ -23,7 +22,6 @@ const Search = () => {
     setSelectTypeService(event.target.value);
   };
   const handleQueryChange = (event: any) => {
-    console.log(event)
     setQuery(event.target.value);
   };
 
