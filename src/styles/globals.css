@@ -1,13 +1,11 @@
-
-
 :root {
   --max-width: 1250px;
-  --main-font:normal 1rem 'bernino-regular',Verdana,Arial,Geneva,sans-serif;
+  --main-font: normal 1rem 'bernino-regular', Verdana, Arial, Geneva, sans-serif;
   --big-max-width: 1200px;
 }
 
-input{
-  font-family:  'bernino-regular',Verdana,Arial,Geneva,sans-serif;
+input {
+  font-family: 'bernino-regular', Verdana, Arial, Geneva, sans-serif;
   font-weight: 600;
 }
 
@@ -23,7 +21,7 @@ body {
   overflow-x: hidden;
 }
 
-.container{
+.container {
   margin: auto;
   max-width: var(--max-width);
 }
