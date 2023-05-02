@@ -52,23 +52,31 @@
   font-weight: 700;
 }
 
-.customInputSearch {
-  border: none;
+.containerInputSearch {
   position: relative;
+  display: flex;
+  width: 50%;
+}
+
+.customInputSearch {
+  position: relative;
+  font-weight: 400;
+  border: none;
   outline: none;
-  margin: 0 2%;
   font-size: 1.05rem;
   width: -webkit-fill-available;
-  padding: 0 40px 0 40px;
+  padding: 0 40px 0 45px;
 }
 
 .customInputSearch + svg {
   position: absolute;
   top: 50%;
-  right: 10px;
+  left: 15px;
+  font-size: 20px;
+  /* font-weight: 600; */
   transform: translateY(-50%);
-  color: #999; /* optional - adjust the color of the icon */
-  pointer-events: none; /* optional - make the icon non-clickable */
+  color: #757575;
+  pointer-events: none;
 }
 
 .customButton {
@@ -79,4 +87,14 @@
   font: var(--main-font);
   font-weight: 700;
   border: none;
+}
+
+.containerList {
+  background-color: white;
+  color: black;
+  position: absolute;
+  height: 150px;
+  left: 0;
+  top: 100%;
+  right: 0;
 }
