@@ -1,6 +1,6 @@
-.mainContent{
-  background-color: #F4F5F2;
-  color: #8E8F8C;
+.mainContent {
+  background-color: #f4f5f2;
+  color: #8e8f8c;
 }
 
 .footer {
@@ -11,8 +11,8 @@
   max-width: var(--big-max-width);
   margin: auto;
   padding: 5rem 0 3rem 0;
-  background-color: #F4F5F2;
-  color: #8E8F8C;
+  background-color: #f4f5f2;
+  color: #8e8f8c;
 }
 
 .footerContainer {
@@ -35,7 +35,7 @@
   margin-bottom: 2rem;
 }
 
-.footerSocial{
+.footerSocial {
   display: flex;
   flex-direction: column;
 }
@@ -51,7 +51,7 @@
   margin-right: 1rem;
   padding: 7px 0px;
   border-radius: 50%;
-  color:#8E8F8C;
+  color: #8e8f8c;
   width: 45px;
   height: 25px;
 }
@@ -89,5 +89,3 @@
 .bold {
   font-weight: bold;
 }
-
-
