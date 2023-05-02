@@ -1,8 +1,7 @@
-
-.containerMainView{
-position: relative;
+.containerMainView {
+  position: relative;
 }
-.customImage{
+.customImage {
   background-size: cover;
   justify-content: center;
   width: 100%;
