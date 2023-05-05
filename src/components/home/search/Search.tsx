@@ -12,6 +12,10 @@ interface SearchResult {
   suggestedLocationId: string;
   subTypeText: string;
 }
+interface responsePlaces {
+  total: number;
+  locations: SearchResult[];
+}
 
 const Search = () => {
   const optionsRent = [
@@ -31,17 +35,19 @@ const Search = () => {
   const [selectTypeService, setSelectTypeService] = useState('rent');
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [showList, setShowList] = useState<boolean>(false);
+  const [inputError, setInputError] = useState<boolean>(false);
+  const [selectedPlace, setSelectedPlace] = useState<SearchResult | null>(null);
 
   const handleSelectType = (event: any) => {
     setSelectTypeService(event.target.value);
   };
   const handleQueryChange = async (event: any) => {
     setQuery(event.target.value);
+    setInputError(false);
   };
 
   useEffect(() => {
     const getData = async () => {
-      console.log(query);
       try {
         const res = await fetch(
           `https://idealista2.p.rapidapi.com/auto-complete?prefix=${query}&country=es`,
@@ -54,10 +60,8 @@ const Search = () => {
           },
         );
 
-        const results = await res.json();
-
+        const results: responsePlaces = await res.json();
         setSearchResults(results.locations);
-        console.log(results);
       } catch (error) {
         console.log(error);
       }
@@ -65,7 +69,11 @@ const Search = () => {
     getData();
   }, [query]);
 
-  const handleButtonClick = () => {
+  const searchPlaces = () => {
+    if (!query.length) {
+      setInputError(true);
+      return;
+    }
     console.log(query);
   };
 
@@ -101,7 +109,9 @@ const Search = () => {
           </div>
           <div className={localStyles.containerInputSearch}>
             <input
-              className={localStyles.customInputSearch}
+              className={`${localStyles.customInputSearch} ${
+                inputError ? localStyles.inputError : ''
+              }`}
               type="text"
               placeholder="Escribe dónde buscas"
               value={query}
@@ -110,18 +120,32 @@ const Search = () => {
               onBlur={() => setTimeout(() => setShowList(false), 200)}
             />
             <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+            {inputError && (
+              <span className={localStyles.inputErrorMessage}>
+                Escribe una ubicación donde buscar
+              </span>
+            )}
             {/* {showList && searchResults.length > 0 && ( */}
-            {(
+            {
               <ul className={localStyles.containerList}>
                 {searchResults.map((result) => (
-                  <PlaceItem key={result.locationId} {...result} />
+                  <PlaceItem
+                    onClick={() => setSelectedPlace(result)}
+                    className={`${
+                      selectedPlace?.locationId === result.locationId
+                        ? localStyles.placeSelected
+                        : ''
+                    }`}
+                    key={result.locationId}
+                    {...result}
+                  />
                 ))}
               </ul>
-            )}
+            }
           </div>
           <button
             className={localStyles.customButton}
-            onClick={handleButtonClick}
+            onClick={() => searchPlaces()}
           >
             Buscar
           </button>
