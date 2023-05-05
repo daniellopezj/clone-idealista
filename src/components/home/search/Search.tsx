@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import localStyles from '@/components/home/search/Search.module.css';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PlaceItem from '../placeItem/PlaceItem';
 
 interface SearchResult {
   name: string;
@@ -109,18 +110,13 @@ const Search = () => {
               onBlur={() => setTimeout(() => setShowList(false), 200)}
             />
             <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
-            {showList ? (
-              <div className={localStyles.containerList}>
-                {searchResults.length > 0 && (
-                  <ul className="search-component-results">
-                    {searchResults.map((result) => (
-                      <li key={result.locationId}>{JSON.stringify(result)} </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ) : (
-              ''
+            {/* {showList && searchResults.length > 0 && ( */}
+            {(
+              <ul className={localStyles.containerList}>
+                {searchResults.map((result) => (
+                  <PlaceItem key={result.locationId} {...result} />
+                ))}
+              </ul>
             )}
           </div>
           <button
