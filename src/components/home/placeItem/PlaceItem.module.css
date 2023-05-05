@@ -1,0 +1,8 @@
+.container{
+  cursor: pointer;
+  border-bottom: 1px solid #d7d7d7;
+  padding: 10px 15px;
+}
+.container:hover{
+  
+}
