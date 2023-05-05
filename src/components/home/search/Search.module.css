@@ -73,7 +73,6 @@
   top: 50%;
   left: 15px;
   font-size: 20px;
-  /* font-weight: 600; */
   transform: translateY(-50%);
   color: #757575;
   pointer-events: none;
@@ -93,8 +92,22 @@
   background-color: white;
   color: black;
   position: absolute;
+  z-index: 10;
   height: auto;
   left: 0;
   top: 100%;
   right: 0;
+  border: 1px solid #d7d7d7;
+}
+
+.inputError {
+  border: 2px solid red;
+}
+
+.inputErrorMessage {
+  color: red;
+  width: 100%;
+  position: absolute;
+  bottom: -18px;
+  font-size: 0.8rem;
 }

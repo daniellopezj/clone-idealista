@@ -16,6 +16,7 @@
   background-size: cover;
   justify-content: center;
   width: 100%;
+  z-index: -1;
 }
 
 .inverseArticle {
@@ -25,7 +26,7 @@
 .inverseCardMessage {
   margin-left: 0 !important;
   margin-right: -4rem;
-  z-index: 2;
+  z-index: 1;
 }
 .cardMessage {
   width: 27rem;
