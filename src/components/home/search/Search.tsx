@@ -37,31 +37,42 @@ const Search = () => {
   const [showList, setShowList] = useState<boolean>(false);
   const [inputError, setInputError] = useState<boolean>(false);
   const [selectedPlace, setSelectedPlace] = useState<SearchResult | null>(null);
+  let abortController = new AbortController();
 
   const handleSelectType = (event: any) => {
     setSelectTypeService(event.target.value);
   };
   const handleQueryChange = async (event: any) => {
     setQuery(event.target.value);
+    if (!event.target.value) {
+      setSelectedPlace(null);
+      setSearchResults([]);
+    }
     setInputError(false);
   };
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const res = await fetch(
-          `https://idealista2.p.rapidapi.com/auto-complete?prefix=${query}&country=es`,
-          {
-            headers: {
-              'X-RapidAPI-Key':
-                '4e66ee2754msh37d0a809cfca29dp18dfa2jsnd7927de5ae36',
-              'X-RapidAPI-Host': 'idealista2.p.rapidapi.com',
+        if (query.length > 1) {
+          abortController.abort();
+          abortController = new AbortController();
+          const res = await fetch(
+            `https://idealista2.p.rapidapi.com/auto-complete?prefix=${query}&country=es`,
+            {
+              signal: abortController.signal,
+              headers: {
+                'X-RapidAPI-Key':
+                  '4e66ee2754msh37d0a809cfca29dp18dfa2jsnd7927de5ae36',
+                'X-RapidAPI-Host': 'idealista2.p.rapidapi.com',
+              },
             },
-          },
-        );
-
-        const results: responsePlaces = await res.json();
-        setSearchResults(results.locations);
+          );
+          if (res.status < 400) {
+            const results: responsePlaces = await res.json();
+            setSearchResults(results.locations);
+          }
+        }
       } catch (error) {
         console.log(error);
       }
@@ -69,12 +80,17 @@ const Search = () => {
     getData();
   }, [query]);
 
-  const searchPlaces = () => {
-    if (!query.length) {
+  const search = () => {
+    const place = selectedPlace || searchResults[0];
+    if (!place) {
       setInputError(true);
       return;
     }
-    console.log(query);
+    alert(place.name);
+  };
+
+  const selectPlace = (place: SearchResult) => {
+    setSelectedPlace(place);
   };
 
   return (
@@ -125,12 +141,11 @@ const Search = () => {
                 Escribe una ubicación donde buscar
               </span>
             )}
-            {/* {showList && searchResults.length > 0 && ( */}
-            {
+            {showList && searchResults.length > 0 && (
               <ul className={localStyles.containerList}>
                 {searchResults.map((result) => (
                   <PlaceItem
-                    onClick={() => setSelectedPlace(result)}
+                    onClick={() => selectPlace(result)}
                     className={`${
                       selectedPlace?.locationId === result.locationId
                         ? localStyles.placeSelected
@@ -141,12 +156,9 @@ const Search = () => {
                   />
                 ))}
               </ul>
-            }
+            )}
           </div>
-          <button
-            className={localStyles.customButton}
-            onClick={() => searchPlaces()}
-          >
+          <button className={localStyles.customButton} onClick={() => search()}>
             Buscar
           </button>
         </div>
