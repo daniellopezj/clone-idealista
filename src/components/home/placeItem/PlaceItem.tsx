@@ -5,13 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const PlaceItem = (place: any) => {
   return (
-    <div className={localStyles.container}>
+    <li className={localStyles.container}>
       <span className={localStyles.placeName}> {place.name}</span>
       <div className={localStyles.location}>
         <FontAwesomeIcon className={localStyles.iconlocation} icon={faLocationDot}></FontAwesomeIcon>
        <span className={localStyles.locationName}> {place.subTypeText}</span>
       </div>
-    </div>
+    </li>
   );
 };
 

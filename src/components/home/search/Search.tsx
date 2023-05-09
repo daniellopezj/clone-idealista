@@ -97,7 +97,7 @@ const Search = () => {
     <div className={localStyles.mainContainerSearch}>
       <div className={localStyles.contentSearch}>
         <div className={localStyles.title}>
-          <h2>¿Realmente compras algo para toda la vida?</h2>
+          <h2 className='text-2xl font-bold'>¿Realmente compras algo para toda la vida?</h2>
         </div>
         <div className={localStyles.searchContainerLine}>
           <div className={localStyles.containerRadios}>
