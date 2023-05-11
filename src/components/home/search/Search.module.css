@@ -100,6 +100,10 @@
   border: 1px solid #d7d7d7;
 }
 
+.placeSelected{
+  background-color: red;
+}
+
 .inputError {
   border: 2px solid red;
 }
