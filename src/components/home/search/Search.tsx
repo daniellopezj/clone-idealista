@@ -36,7 +36,7 @@ const Search = () => {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [showList, setShowList] = useState<boolean>(false);
   const [inputError, setInputError] = useState<boolean>(false);
-  const [selectedPlace, setSelectedPlace] = useState<SearchResult | null>(null);
+  const [placeSelected, setPlaceSelected] = useState<SearchResult | null>(null);
   let abortController = new AbortController();
 
   const handleSelectType = (event: any) => {
@@ -45,7 +45,7 @@ const Search = () => {
   const handleQueryChange = async (event: any) => {
     setQuery(event.target.value);
     if (!event.target.value) {
-      setSelectedPlace(null);
+      setPlaceSelected(null);
       setSearchResults([]);
     }
     setInputError(false);
@@ -63,7 +63,7 @@ const Search = () => {
               signal: abortController.signal,
               headers: {
                 'X-RapidAPI-Key':
-                  '4e66ee2754msh37d0a809cfca29dp18dfa2jsnd7927de5ae36',
+                  'b92e6ba8e6mshc10c2bd9fb133a8p1ad5e8jsnded8e7917a1a',
                 'X-RapidAPI-Host': 'idealista2.p.rapidapi.com',
               },
             },
@@ -81,23 +81,26 @@ const Search = () => {
   }, [query]);
 
   const search = () => {
-    const place = selectedPlace || searchResults[0];
-    if (!place) {
+    if (!placeSelected) {
       setInputError(true);
       return;
     }
-    alert(place.name);
+    setQuery(placeSelected.name);
   };
 
-  const selectPlace = (place: SearchResult) => {
-    setSelectedPlace(place);
-  };
+  useEffect(() => {
+    if (placeSelected) {
+      search();
+    }
+  }, [placeSelected]);
 
   return (
     <div className={localStyles.mainContainerSearch}>
       <div className={localStyles.contentSearch}>
         <div className={localStyles.title}>
-          <h2 className='text-2xl font-bold'>¿Realmente compras algo para toda la vida?</h2>
+          <h2 className="text-2xl font-bold">
+            ¿Realmente compras algo para toda la vida?
+          </h2>
         </div>
         <div className={localStyles.searchContainerLine}>
           <div className={localStyles.containerRadios}>
@@ -145,14 +148,10 @@ const Search = () => {
               <ul className={localStyles.containerList}>
                 {searchResults.map((result) => (
                   <PlaceItem
-                    onClick={() => selectPlace(result)}
-                    className={`${
-                      selectedPlace?.locationId === result.locationId
-                        ? localStyles.placeSelected
-                        : ''
-                    }`}
-                    key={result.locationId}
-                    {...result}
+                    key={result.suggestedLocationId}
+                    handleClick={() => setPlaceSelected(result)}
+                    place={result}
+                
                   />
                 ))}
               </ul>
