@@ -1,4 +1,4 @@
-import { CardInfo, SocialIcon } from '@/types/general.types';
+import { CardInfo, SocialIcon } from '@/types/General.types';
 import {
   faLinkedinIn,
   faGithub,

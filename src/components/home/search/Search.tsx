@@ -3,21 +3,12 @@ import localStyles from '@/components/home/search/Search.module.css';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PlaceItem from '../placeItem/PlaceItem';
-
-interface SearchResult {
-  name: string;
-  locationId: string;
-  divisible: boolean;
-  type: string;
-  suggestedLocationId: string;
-  subTypeText: string;
-}
-interface responsePlaces {
-  total: number;
-  locations: SearchResult[];
-}
+import { SearchResult } from '@/types/Places.types';
+import { backend } from '@/api/backend';
 
 const Search = () => {
+  const { apiSearch } = backend();
+  
   const optionsRent = [
     {
       id: 1,
@@ -37,7 +28,6 @@ const Search = () => {
   const [showList, setShowList] = useState<boolean>(false);
   const [inputError, setInputError] = useState<boolean>(false);
   const [placeSelected, setPlaceSelected] = useState<SearchResult | null>(null);
-  let abortController = new AbortController();
 
   const handleSelectType = (event: any) => {
     setSelectTypeService(event.target.value);
@@ -53,28 +43,9 @@ const Search = () => {
 
   useEffect(() => {
     const getData = async () => {
-      try {
-        if (query.length > 1) {
-          abortController.abort();
-          abortController = new AbortController();
-          const res = await fetch(
-            `https://idealista2.p.rapidapi.com/auto-complete?prefix=${query}&country=es`,
-            {
-              signal: abortController.signal,
-              headers: {
-                'X-RapidAPI-Key':
-                  'b92e6ba8e6mshc10c2bd9fb133a8p1ad5e8jsnded8e7917a1a',
-                'X-RapidAPI-Host': 'idealista2.p.rapidapi.com',
-              },
-            },
-          );
-          if (res.status < 400) {
-            const results: responsePlaces = await res.json();
-            setSearchResults(results.locations);
-          }
-        }
-      } catch (error) {
-        console.log(error);
+      if (query.length > 1) {
+        const res = await apiSearch(query);
+        setSearchResults(res);
       }
     };
     getData();
@@ -151,7 +122,6 @@ const Search = () => {
                     key={result.suggestedLocationId}
                     handleClick={() => setPlaceSelected(result)}
                     place={result}
-                
                   />
                 ))}
               </ul>

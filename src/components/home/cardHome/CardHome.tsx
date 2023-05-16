@@ -2,7 +2,7 @@ import React from 'react';
 import localStyles from '@/components/home/cardHome/CardHome.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CardInfo } from '@/types/general.types';
+import { CardInfo } from '@/types/General.types';
 
 const CardHome = (props: CardInfo) => {
   return (
