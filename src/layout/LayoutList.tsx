@@ -1,17 +1,14 @@
 import React, { FC } from 'react';
-import Navbar from '@/components/common/navbar/Navbar';
+import SimpleNavbar from '@/components/common/simpleNavbar/SimpleNavbar';
 import Footer from '@/components/common/footer/Footer';
+import localStyles from '@/styles/LayoutList.module.scss';
 
 const LayoutList = ({ children }: any) => {
   return (
     <>
-      <div className="container">
-        <Navbar />
-        <main>
-          {children}
-        </main>
-      </div>
-      <Footer />
+      <SimpleNavbar />
+      <main>{children}</main>
+      <Footer className={localStyles.listContainer} />
     </>
   );
 };

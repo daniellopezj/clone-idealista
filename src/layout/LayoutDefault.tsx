@@ -7,9 +7,7 @@ const LayoutDefault = ({ children }: any) => {
     <>
       <div className="container">
         <Navbar />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
       </div>
       <Footer />
     </>

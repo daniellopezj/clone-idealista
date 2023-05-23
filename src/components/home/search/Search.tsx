@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import localStyles from '@/components/home/search/Search.module.css';
+import localStyles from '@/components/home/search/Search.module.scss';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PlaceItem from '../placeItem/PlaceItem';
@@ -8,7 +8,7 @@ import { backend } from '@/api/backend';
 
 const Search = () => {
   const { apiSearch } = backend();
-  
+
   const optionsRent = [
     {
       id: 1,

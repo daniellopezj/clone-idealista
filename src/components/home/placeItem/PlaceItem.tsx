@@ -1,5 +1,5 @@
 import React from 'react';
-import localStyles from '@/components/home/placeItem/PlaceItem.module.css';
+import localStyles from '@/components/home/placeItem/PlaceItem.module.scss';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

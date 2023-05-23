@@ -1,4 +1,3 @@
-
 export interface SearchResult {
   name: string;
   locationId: string;
@@ -8,8 +7,18 @@ export interface SearchResult {
   subTypeText: string;
 }
 
-
 export interface ResponsePlaces {
   total: number;
   locations: SearchResult[];
+}
+
+export interface FiltersPlaces {
+  locationId: string;
+  locationName: string;
+  operation: string;
+  numPage: number;
+  maxItems: number;
+  sort: string;
+  locale: string;
+  country: string;
 }

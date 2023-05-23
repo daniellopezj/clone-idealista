@@ -6,9 +6,8 @@ const Body = () => {
   const [floors, setFloors] = useState([]);
   const router = useRouter();
 
-
   useEffect(() => {
-    router.query
+    router.query;
   }, []);
 
   return (
