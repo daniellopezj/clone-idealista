@@ -7,10 +7,16 @@
   gap: 6px;
   font-size: 0.85rem;
 }
-.container:hover  {
+.container:hover {
   background-color: #e9e9e9;
 }
-.container:hover  .placeName{
+.container:hover .placeName {
+  color: #b62682;
+}
+.isSelected {
+  background-color: #e9e9e9;
+}
+.isSelected .placeName {
   color: #b62682;
 }
 
@@ -25,6 +31,6 @@
   font-size: 16px;
 }
 
-.placeName{
+.placeName {
   font-weight: 600;
 }

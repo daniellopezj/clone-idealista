@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --max-width: 1250px;
   --main-font: normal 1rem 'bernino-regular', Verdana, Arial, Geneva, sans-serif;
@@ -24,6 +28,10 @@ body {
 .container {
   margin: auto;
   max-width: var(--max-width);
+}
+
+.container-list {
+  margin: 0 8%;
 }
 
 .main-container {
