@@ -8,6 +8,7 @@ export type CardInfo = {
   link: string;
   linkMessage: string;
 };
+
 export type SocialIcon = {
   id: number;
   icon: IconDefinition;
