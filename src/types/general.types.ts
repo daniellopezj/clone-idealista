@@ -1,6 +1,6 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
-export type CardInfo = {
+export interface CardInfo {
   id: number;
   srcImage: string;
   title: string;
@@ -9,7 +9,7 @@ export type CardInfo = {
   linkMessage: string;
 };
 
-export type SocialIcon = {
+export interface SocialIcon {
   id: number;
   icon: IconDefinition;
   link: string;
