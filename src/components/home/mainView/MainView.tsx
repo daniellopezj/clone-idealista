@@ -1,5 +1,5 @@
 import React from 'react';
-import localStyles from '@/components/home/mainView/MainView.module.css';
+import localStyles from '@/components/home/mainView/MainView.module.scss';
 import Image from 'next/image';
 import Search from '../search/Search';
 

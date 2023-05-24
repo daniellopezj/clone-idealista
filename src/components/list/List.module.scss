@@ -1,0 +1,46 @@
+.listContent {
+  display: flex;
+  gap: 25px;
+  background-color: #f4f5f2;
+  padding: 1rem 8%;
+}
+
+.listHeader {
+  margin: 0 8%;
+  height: 120px;
+}
+.listNumberPlaces {
+  margin: 2rem 0;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.containerRadios {
+  display: flex;
+  margin: 0 8%;
+}
+
+.customInputRadio {
+  opacity: 0;
+  position: absolute;
+}
+
+.customLabels {
+  cursor: pointer;
+  background-color: #fff;
+  border: solid 0.0625rem #cbccc7;
+  color: #666664;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.75rem 0;
+  margin-right: 2rem;
+}
+
+.selectLabel {
+  color: #b62682;
+  border: 0;
+  border-width: 0 0 2px 0;
+  border-bottom: 2px solid #b62682;
+  background-color: white;
+  font-weight: 700;
+}

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import localStyles from '@/components/common/footer/Footer.module.css';
+import localStyles from '@/components/common/footer/Footer.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { socialIcons } from '@/services/data.mocks';
 
-const Footer = () => {
+const Footer = ({ className }: any) => {
   const [ishover, sethover] = useState(-1);
 
   function MouseOver(index: number) {
@@ -16,7 +16,7 @@ const Footer = () => {
   }
 
   return (
-    <div className={localStyles.mainContent}>
+    <div className={`${localStyles.mainContent} ${className}`}>
       <section className={localStyles.footer}>
         <footer className={localStyles.footerContainer}>
           <div className={localStyles.footerContent}>
@@ -24,8 +24,8 @@ const Footer = () => {
               className={localStyles.logo}
               src="/idealista-logo.svg"
               alt="Next.js Logo"
-              width={300}
-              height={70}
+              width={200}
+              height={50}
               priority
             />
             <span className={localStyles.footerContentDescription}>
