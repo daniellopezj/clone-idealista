@@ -1,8 +1,12 @@
-.listContent {
-  display: flex;
-  gap: 25px;
+.listContainer{
   background-color: #f4f5f2;
-  padding: 1rem 8%;
+  margin: 0;
+}
+.listContent {
+  display: grid;
+  margin: 0 8%;
+  padding: 1rem 0;
+  grid-template-columns: 20% 1fr;
 }
 
 .listHeader {
@@ -18,6 +22,7 @@
 .containerRadios {
   display: flex;
   margin: 0 8%;
+  padding-left: 17%;
 }
 
 .customInputRadio {
@@ -43,4 +48,8 @@
   border-bottom: 2px solid #b62682;
   background-color: white;
   font-weight: 700;
+}
+
+.listPlacesContainer {
+  background-color: red;
 }

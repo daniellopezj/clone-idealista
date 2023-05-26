@@ -10,7 +10,7 @@ const details = () => {
   const router = useRouter();
   const { locationId, locationName } = router.query;
   const [resultRequest, setResultRequest] = useState<ResponseListFloor | null>(
-    null,
+    {} as ResponseListFloor,
   );
   const [params, setParams] = useState({
     country: 'es',
@@ -23,9 +23,12 @@ const details = () => {
     sort: 'asc',
   } as FiltersPlaces);
 
-  const fetchData = useMemo(() => async () => {
-    console.log('memo') //request to listFloor
-  }, [params]);
+  const fetchData = useMemo(
+    () => async () => {
+      console.log('memo'); //request to listFloor
+    },
+    [params],
+  );
 
   useEffect(() => {
     fetchData();
@@ -69,9 +72,14 @@ const details = () => {
             </label>
           ))}
         </div>
-        <div className={localStyles.listContent}>
-          <Filters />
-          <ListPlaces />
+        <div className={localStyles.listContainer}>
+          {resultRequest && (
+            <div className={localStyles.listContent}>
+              <Filters />
+              <ListPlaces className={localStyles.listPlaces} places={[]} />
+              {/* <ListPlaces className={localStyles.listPlaces} places={resultRequest.elementList} /> */}
+            </div>
+          )}
         </div>
       </LayoutList>
     </>
