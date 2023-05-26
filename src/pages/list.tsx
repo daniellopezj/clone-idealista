@@ -1,10 +1,36 @@
-import React from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import LayoutList from '@/layout/LayoutList';
 import Filters from '@/components/list/filters/Filters';
 import ListPlaces from '@/components/list/listPlaces/ListPlaces';
 import localStyles from '@/components/list/List.module.scss';
+import { useRouter } from 'next/router';
+import { FiltersPlaces, ResponseListFloor } from '@/types/Places.types';
 
 const details = () => {
+  const router = useRouter();
+  const { locationId, locationName } = router.query;
+  const [resultRequest, setResultRequest] = useState<ResponseListFloor | null>(
+    null,
+  );
+  const [params, setParams] = useState({
+    country: 'es',
+    locationId,
+    locationName,
+    operation: 'rent',
+    numPage: 1,
+    maxItems: 100,
+    locale: 'es',
+    sort: 'asc',
+  } as FiltersPlaces);
+
+  const fetchData = useMemo(() => async () => {
+    console.log('memo') //request to listFloor
+  }, [params]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
   const optionsRent = [
     {
       id: 1,

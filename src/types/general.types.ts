@@ -7,11 +7,11 @@ export interface CardInfo {
   description: string;
   link: string;
   linkMessage: string;
-};
+}
 
 export interface SocialIcon {
   id: number;
   icon: IconDefinition;
   link: string;
   color: string;
-};
+}

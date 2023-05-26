@@ -5,9 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PlaceItem from '../placeItem/PlaceItem';
 import { SearchResult } from '@/types/Places.types';
 import { backend } from '@/api/backend';
+import { useRouter } from 'next/router';
 
 const Search = () => {
   const { apiSearch } = backend();
+  const router = useRouter();
 
   const optionsRent = [
     {
@@ -43,8 +45,9 @@ const Search = () => {
 
   useEffect(() => {
     const getData = async () => {
-      if (query.length > 1) {
-        const res = await apiSearch(query);
+      if (query.length > 2 && query.length < 9) {
+        let res = await apiSearch(query);
+        res = res.filter((place) => place.locationId);
         setSearchResults(res);
       }
     };
@@ -57,6 +60,14 @@ const Search = () => {
       return;
     }
     setQuery(placeSelected.name);
+    const queryParams = {
+      locationId: placeSelected.locationId,
+      locationName: placeSelected.name,
+    };
+    router.push({
+      pathname: '/list',
+      query: queryParams,
+    });
   };
 
   useEffect(() => {

@@ -15,10 +15,70 @@ export interface ResponsePlaces {
 export interface FiltersPlaces {
   locationId: string;
   locationName: string;
-  operation: string;
+  operation: 'rent' | 'sale';
   numPage: number;
   maxItems: number;
   sort: string;
   locale: string;
   country: string;
+}
+
+export interface Floor {
+  propertyCode: string;
+  numPhotos: number;
+  floor: string;
+  price: number;
+  propertyType: string;
+  operation: string;
+  size: number;
+  exterior: boolean;
+  rooms: number;
+  bathrooms: number;
+  address: string;
+  province: string;
+  municipality: string;
+  district: string;
+  country: string;
+  neighborhood: string;
+  locationId: string;
+  latitude: number;
+  longitude: number;
+  showAddress: boolean;
+  url: string;
+  description: string;
+  hasVideo: boolean;
+  status: string;
+  newDevelopment: boolean;
+  favourite: boolean;
+  newProperty: boolean;
+  contactInfo: any;
+  hasLift: boolean;
+  priceByArea: number;
+  features: any;
+  detailedType: any;
+  suggestedTexts: any;
+  hasPlan: boolean;
+  has3DTour: boolean;
+  has360: boolean;
+  hasStaging: boolean;
+  topNewDevelopment: boolean;
+  topHighlight: boolean;
+  urgentVisualHighlight: boolean;
+  visualHighlight: boolean;
+  preferenceHighlight: boolean;
+}
+
+export interface ResponseListFloor {
+  total: number;
+  totalPages: number;
+  actualPage: number;
+  itemsPerPage: number;
+  numPaginations: number;
+  hiddenResults: boolean;
+  summary: any;
+  filter: any;
+  alertName: string;
+  lowerRangePosition: number;
+  upperRangePosition: number;
+  paginable: boolean;
 }
