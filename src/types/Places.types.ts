@@ -69,7 +69,7 @@ export interface Floor {
 }
 
 export interface ResponseListFloor {
-  elementList: Floor[]
+  elementList: Floor[];
   total: number;
   totalPages: number;
   actualPage: number;

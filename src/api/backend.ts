@@ -27,7 +27,9 @@ export const backend = () => {
     return [];
   }
 
-  async function apiListFloors(params: FiltersPlaces): Promise<ResponseListFloor> {
+  async function apiListFloors(
+    params: FiltersPlaces,
+  ): Promise<ResponseListFloor> {
     const res = await axios.get(`${BASE_URL}/properties/list`, {
       headers: headers,
       params: params,

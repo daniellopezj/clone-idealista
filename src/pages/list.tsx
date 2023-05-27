@@ -6,7 +6,7 @@ import localStyles from '@/components/list/List.module.scss';
 import { useRouter } from 'next/router';
 import { FiltersPlaces, ResponseListFloor } from '@/types/Places.types';
 
-const details = () => {
+const List = () => {
   const router = useRouter();
   const { locationId, locationName } = router.query;
   const [resultRequest, setResultRequest] = useState<ResponseListFloor | null>(
@@ -86,4 +86,4 @@ const details = () => {
   );
 };
 
-export default details;
+export default List;
