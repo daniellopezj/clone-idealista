@@ -23,10 +23,19 @@ export interface FiltersPlaces {
   country: string;
 }
 
+export interface ImagesCarousel {
+  url: string;
+}
+
+export interface FloorMultimedia {
+  images: ImagesCarousel[];
+}
+
 export interface Floor {
   propertyCode: string;
   numPhotos: number;
   floor: string;
+  thumbnail: string;
   price: number;
   propertyType: string;
   operation: string;
@@ -45,6 +54,7 @@ export interface Floor {
   longitude: number;
   showAddress: boolean;
   url: string;
+  multimedia: FloorMultimedia;
   description: string;
   hasVideo: boolean;
   status: string;
