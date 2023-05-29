@@ -4,9 +4,11 @@ import Filters from '@/components/list/filters/Filters';
 import ListFloor from '@/components/list/listFloor/ListFloor';
 import localStyles from '@/components/list/List.module.scss';
 import { useRouter } from 'next/router';
+import { backend } from '@/api/backend';
 import { FiltersPlaces, ResponseListFloor } from '@/types/Places.types';
 
 const List = () => {
+  const { test } = backend();
   const router = useRouter();
   const { locationId, locationName } = router.query;
   const [resultRequest, setResultRequest] = useState<ResponseListFloor | null>({
@@ -205,6 +207,8 @@ const List = () => {
 
   const fetchData = useMemo(
     () => async () => {
+      let res = await test();
+      console.log(res); //request to listFloor
       console.log('memo'); //request to listFloor
     },
     [params],
