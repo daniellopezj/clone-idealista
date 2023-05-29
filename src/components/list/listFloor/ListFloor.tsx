@@ -11,13 +11,11 @@ interface ListFloorPros {
 
 const ListFloor = ({ Floors, className }: ListFloorPros) => {
   return (
-    <>
-      <ul>
-        {Floors.map((floor) => (
-          <CardFloor key={floor.propertyCode} floor={floor} />
-        ))}
-      </ul>
-    </>
+    <ul className={`${className} ${localStyle.list}`}>
+      {Floors.map((floor) => (
+        <CardFloor key={floor.propertyCode} floor={floor} />
+      ))}
+    </ul>
   );
 };
 

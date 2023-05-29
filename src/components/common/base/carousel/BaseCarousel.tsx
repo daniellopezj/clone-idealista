@@ -6,13 +6,20 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 interface BaseCarouselProps {
   images: ImagesCarousel[];
+  className: string;
 }
 
-const BaseCarousel = ({ images }: BaseCarouselProps) => {
+const BaseCarousel = ({ images, className }: BaseCarouselProps) => {
   return (
-    <Carousel showThumbs={false}>
+    <Carousel className={className} width={350} dynamicHeight={true} animationHandler={'slide'} showThumbs={false}>
       {images.map((image, i) => (
-        <Image key={`image${i}`} alt="Floor image" src={image.url} width={250} height={250} />
+        <Image
+          key={`image${i}`}
+          alt="Floor image"
+          src={image.url}
+          width={300}
+          height={250}
+        />
       ))}
     </Carousel>
   );

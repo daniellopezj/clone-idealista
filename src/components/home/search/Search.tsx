@@ -120,7 +120,7 @@ const Search = () => {
               onFocus={() => setShowList(true)}
               onBlur={() => setTimeout(() => setShowList(false), 200)}
             />
-            <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon>
+            <FontAwesomeIcon className={localStyles.iconSearch} icon={faSearch}></FontAwesomeIcon>
             {inputError && (
               <span className={localStyles.inputErrorMessage}>
                 Escribe una ubicación donde buscar
