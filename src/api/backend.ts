@@ -27,33 +27,6 @@ export const backend = () => {
     return [];
   }
 
-  async function test(
-  ): Promise<any> {
-    const res = await axios.get(`https://www.idealista.com/labs/api/2/search?`, {
-      headers: headers,
-      params: {
-        "action": "json",
-        "apikey": "0lVOkSbmEM5iIo7pAPFprxFUUuJUCZXU",
-        "country": "es",
-        "maxItems": 50,
-        "numPage": 1,
-        "noSmokers": true,
-        "sex": "X",
-        "operation": "A",
-        "pictures": true,
-        "propertyType": "bedrooms",
-        "k": "4ebe5ef1c9ba6f28c15cc26d755016b9",
-        "t": "apigee"
-        
-      },
-    });
-    console.log(res)
-    if (res.status < 400) {
-      return res.data as ResponseListFloor;
-    }
-    throw new Error('Request failed');
-  }
-
   async function apiListFloors(
     params: FiltersPlaces,
   ): Promise<ResponseListFloor> {
@@ -71,6 +44,5 @@ export const backend = () => {
   return {
     apiListFloors,
     apiSearch,
-    test
   };
 };
