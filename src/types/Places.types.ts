@@ -31,6 +31,20 @@ export interface FloorMultimedia {
   images: ImagesCarousel[];
 }
 
+export interface FloorContact {
+  phone1: {
+    phoneNumber: string
+    formattedPhone: string
+    prefix: string
+    phoneNumberForMobileDialing: string
+    nationalNumber: boolean
+  },
+  agencyLogo?: string
+  contactName: string
+  userType: string
+  contactMethod: string
+}
+
 export interface Floor {
   propertyCode: string;
   numPhotos: number;
@@ -61,12 +75,12 @@ export interface Floor {
   newDevelopment: boolean;
   favourite: boolean;
   newProperty: boolean;
-  contactInfo: any;
+  contactInfo: FloorContact;
   hasLift: boolean;
   priceByArea: number;
   features: any;
   detailedType: any;
-  suggestedTexts: any;
+  suggestedTexts: { title: string };
   hasPlan: boolean;
   has3DTour: boolean;
   has360: boolean;

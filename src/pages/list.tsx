@@ -42,6 +42,7 @@ const List = () => {
         newDevelopment: false,
         favourite: false,
         newProperty: false,
+        suggestedTexts: { title: 'prueba' },
         multimedia: {
           images: [
             {
@@ -91,6 +92,8 @@ const List = () => {
         longitude: 12.5180892,
         showAddress: false,
         url: 'https://www.idealista.it/immobile/14823578/',
+        suggestedTexts: { title: 'prueba' },
+
         description:
           "In the immediate vicinity of the Appia Antica Park in Via dell'Appia Antica, inside a private villa with garden we offer the rental of a flat in a basement and internally composed of a living room with kitchenette, a bedroom with wall-mounted air conditioner, bathroom and parking space, the apartment is renovated and is delivered without furniture. Contract 3 + 2, with dry coupon. To view the property the appointments will be fixed from 01/09/2018.",
         hasVideo: false,
@@ -142,6 +145,7 @@ const List = () => {
         district: 'Appio Latino',
         country: 'it',
         neighborhood: 'Caffarella',
+        suggestedTexts: { title: 'prueba' },
         locationId: '0-EU-IT-RM-01-001-097-09-003',
         latitude: 41.8545834,
         longitude: 12.5180892,
@@ -151,6 +155,20 @@ const List = () => {
           "In the immediate vicinity of the Appia Antica Park in Via dell'Appia Antica, inside a private villa with garden we offer the rental of a flat in a basement and internally composed of a living room with kitchenette, a bedroom with wall-mounted air conditioner, bathroom and parking space, the apartment is renovated and is delivered without furniture. Contract 3 + 2, with dry coupon. To view the property the appointments will be fixed from 01/09/2018.",
         hasVideo: false,
         status: 'good',
+        contactInfo: {
+          phone1: {
+            phoneNumber: '0685871005',
+            formattedPhone: '0685871005',
+            prefix: '39',
+            phoneNumberForMobileDialing: '+390685871005',
+            nationalNumber: true,
+          },
+          contactName: "L'AFFITTAFACILE",
+          userType:"professional",
+          agencyLogo:"https://st3.idealista.it/8f/af/32/laffittafacile-roma.gif",
+          contactMethod:"all",
+        },
+
         newDevelopment: false,
         favourite: false,
         newProperty: false,
@@ -228,42 +246,42 @@ const List = () => {
   ];
 
   return (
-      <LayoutList>
-        <div className={localStyles.listHeader}>
-          <h1 className={localStyles.listNumberPlaces}>
-            21.563 casas y pisos en Madrid
-          </h1>
-        </div>
-        <div className={localStyles.containerRadios}>
-          {optionsRent.map((option) => (
-            <label
-              className={`${localStyles.customLabels} ${localStyles.selectLabel}`}
-              key={option.id}
-              htmlFor={option.value}
-            >
-              <input
-                className={localStyles.customInputRadio}
-                id={option.value}
-                type="radio"
-                value={option.value}
-              />
-              {option.text}
-            </label>
-          ))}
-        </div>
-        <div className={localStyles.listContainer}>
-          {resultRequest && (
-            <div className={localStyles.listContent}>
-              <Filters />
-              <ListFloor
-                className={localStyles.listPlaces}
-                Floors={resultRequest.elementList}
-              />
-              {/* <ListPlaces className={localStyles.listPlaces} places={resultRequest.elementList} /> */}
-            </div>
-          )}
-        </div>
-      </LayoutList>
+    <LayoutList>
+      <div className={localStyles.listHeader}>
+        <h1 className={localStyles.listNumberPlaces}>
+          21.563 casas y pisos en Madrid
+        </h1>
+      </div>
+      <div className={localStyles.containerRadios}>
+        {optionsRent.map((option) => (
+          <label
+            className={`${localStyles.customLabels} ${localStyles.selectLabel}`}
+            key={option.id}
+            htmlFor={option.value}
+          >
+            <input
+              className={localStyles.customInputRadio}
+              id={option.value}
+              type="radio"
+              value={option.value}
+            />
+            {option.text}
+          </label>
+        ))}
+      </div>
+      <div className={localStyles.listContainer}>
+        {resultRequest && (
+          <div className={localStyles.listContent}>
+            <Filters />
+            <ListFloor
+              className={localStyles.listPlaces}
+              Floors={resultRequest.elementList}
+            />
+            {/* <ListPlaces className={localStyles.listPlaces} places={resultRequest.elementList} /> */}
+          </div>
+        )}
+      </div>
+    </LayoutList>
   );
 };
 
