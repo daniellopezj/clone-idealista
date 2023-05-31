@@ -5,10 +5,12 @@ import ListFloor from '@/components/list/listFloor/ListFloor';
 import localStyles from '@/components/list/List.module.scss';
 import { useRouter } from 'next/router';
 import { FiltersPlaces, ResponseListFloor } from '@/types/Places.types';
+import Pagination from '@mui/material/Pagination';
 
 const List = () => {
   const router = useRouter();
   const { locationId, locationName } = router.query;
+  const [page, setPage] = React.useState(1);
   const [resultRequest, setResultRequest] = useState<ResponseListFloor | null>({
     elementList: [
       {
@@ -34,6 +36,18 @@ const List = () => {
         latitude: 41.8545834,
         longitude: 12.5180892,
         showAddress: false,
+        contactInfo: {
+          phone1: {
+            phoneNumber: '0685871005',
+            formattedPhone: '0685871005',
+            prefix: '39',
+            phoneNumberForMobileDialing: '+390685871005',
+            nationalNumber: true,
+          },
+          contactName: "L'AFFITTAFACILE",
+          userType: 'professional',
+          contactMethod: 'all',
+        },
         url: 'https://www.idealista.it/immobile/14823578/',
         description:
           "In the immediate vicinity of the Appia Antica Park in Via dell'Appia Antica, inside a private villa with garden we offer the rental of a flat in a basement and internally composed of a living room with kitchenette, a bedroom with wall-mounted air conditioner, bathroom and parking space, the apartment is renovated and is delivered without furniture. Contract 3 + 2, with dry coupon. To view the property the appointments will be fixed from 01/09/2018.",
@@ -95,7 +109,19 @@ const List = () => {
         suggestedTexts: {
           title: '        Piso en calle Gutiérrez Solana, El Viso, Madrid',
         },
+        contactInfo: {
+          phone1: {
+            phoneNumber: '0685871005',
+            formattedPhone: '0685871005',
+            prefix: '39',
+            phoneNumberForMobileDialing: '+390685871005',
+            nationalNumber: true,
+          },
+          contactName: "L'AFFITTAFACILE",
+          userType: 'professional',
 
+          contactMethod: 'all',
+        },
         description:
           "In the immediate vicinity of the Appia Antica Park in Via dell'Appia Antica, inside a private villa with garden we offer the rental of a flat in a basement and internally composed of a living room with kitchenette, a bedroom with wall-mounted air conditioner, bathroom and parking space, the apartment is renovated and is delivered without furniture. Contract 3 + 2, with dry coupon. To view the property the appointments will be fixed from 01/09/2018.",
         hasVideo: false,
@@ -147,8 +173,10 @@ const List = () => {
         district: 'Appio Latino',
         country: 'it',
         neighborhood: 'Caffarella',
-        suggestedTexts: {   title: '        Piso en calle Gutiérrez Solana, El Viso, Madrid  Piso en calle Gutiérrez Solana, El Viso, Madrid',
-      },
+        suggestedTexts: {
+          title:
+            '        Piso en calle Gutiérrez Solana, El Viso, Madrid  Piso en calle Gutiérrez Solana, El Viso, Madrid',
+        },
         locationId: '0-EU-IT-RM-01-001-097-09-003',
         latitude: 41.8545834,
         longitude: 12.5180892,
@@ -230,7 +258,6 @@ const List = () => {
     },
     [params],
   );
-
   useEffect(() => {
     fetchData();
   }, [fetchData]);
@@ -247,6 +274,10 @@ const List = () => {
       text: 'Comprar',
     },
   ];
+
+  const onchangePage = (event: React.ChangeEvent<unknown>, value: number) => {
+    setPage(value);
+  };
 
   return (
     <LayoutList>
@@ -275,12 +306,22 @@ const List = () => {
       <div className={localStyles.listContainer}>
         {resultRequest && (
           <div className={localStyles.listContent}>
-            <Filters />
-            <ListFloor
-              className={localStyles.listPlaces}
-              Floors={resultRequest.elementList}
-            />
-            {/* <ListPlaces className={localStyles.listPlaces} places={resultRequest.elementList} /> */}
+            <Filters className="" />
+            <div>
+              <ListFloor
+                className={localStyles.listPlaces}
+                Floors={resultRequest.elementList}
+              />
+              <Pagination
+                className={localStyles.paginatorContainer}
+                page={page}
+                color="primary"
+                variant="outlined"
+                shape="rounded"
+                onChange={onchangePage}
+                count={10}
+              />
+            </div>
           </div>
         )}
       </div>

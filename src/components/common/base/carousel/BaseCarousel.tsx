@@ -11,7 +11,14 @@ interface BaseCarouselProps {
 
 const BaseCarousel = ({ images, className }: BaseCarouselProps) => {
   return (
-    <Carousel className={className} width={350} dynamicHeight={true} animationHandler={'slide'} showThumbs={false}>
+    <Carousel
+      className={className}
+      width={350}
+      dynamicHeight={true}
+      animationHandler={'slide'}
+      showThumbs={false}
+      showIndicators={false}
+    >
       {images.map((image, i) => (
         <Image
           key={`image${i}`}

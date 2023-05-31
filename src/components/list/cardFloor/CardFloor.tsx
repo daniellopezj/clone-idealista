@@ -2,6 +2,12 @@ import { Floor } from '@/types/Places.types';
 import React from 'react';
 import localStyle from '@/components/list/cardFloor/CardFloor.module.scss';
 import BaseCarousel from '@/components/common/base/carousel/BaseCarousel';
+import DeleteIcon from '@mui/icons-material/Delete';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import PhoneIcon from '@mui/icons-material/Phone';
+import CommentIcon from '@mui/icons-material/Comment';
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
 interface CardFloorProps {
   floor: Floor;
 }
@@ -28,7 +34,6 @@ const CardFloor = ({ floor }: CardFloorProps) => {
             <span> {floor.rooms} Hab</span>
             <span> {floor.size} m²</span>
             <span> Planta {floor.floor}ª </span>
-            {/* <span> {floor.bathrooms} Baños</span> */}
             {floor.hasLift && <span> Incluye ascensor</span>}
           </div>
           <span className={localStyle.bodyDescription}>
@@ -43,7 +48,30 @@ const CardFloor = ({ floor }: CardFloorProps) => {
             />
           )}
         </div>
-        <div className={localStyle.cardContact}>Contact</div>
+        <div className={localStyle.cardContact}>
+          <div>
+            <Button
+              className={localStyle.cardButton}
+              variant="text"
+              color="info"
+              startIcon={<PhoneIcon />}
+            >
+              {floor.contactInfo?.phone1.phoneNumber}
+            </Button>
+
+            <Button variant="text" color="info" startIcon={<CommentIcon />}>
+              Contact
+            </Button>
+          </div>
+          <div>
+            <IconButton aria-label="delete"  color="info">
+              <DeleteIcon />
+            </IconButton>
+            <IconButton aria-label="favorite"  color="info">
+              <FavoriteIcon />
+            </IconButton>
+          </div>
+        </div>
       </div>
     </li>
   );

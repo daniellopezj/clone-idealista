@@ -21,7 +21,7 @@
 .cardBody {
   width: calc(100% - 350px);
   background-color: white;
-  padding: 1rem 1.5rem;
+  padding: 1rem 1rem 0 1.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -71,8 +71,6 @@
   width: 8rem;
 }
 
-
-
 .bodyDescription {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -80,5 +78,18 @@
   overflow: hidden;
 }
 
+.cardButton{
+margin-right: 8px !important;
+
+}
+.cardButton{
+margin-right: 8px !important;
+
+}
+
 .cardContact {
+  padding-top: 0.5rem;
+  border-top: 1px solid #e8e8e8;
+  display: flex;
+  justify-content: space-between;
 }
