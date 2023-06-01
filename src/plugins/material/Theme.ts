@@ -11,6 +11,20 @@ export const roboto = Roboto({
 
 // Create a theme instance.
 const theme = createTheme({
+  components: {
+    MuiSelect: {
+      defaultProps: {
+        size: 'small',
+        color: "primary"
+      },
+    },
+    MuiMenuItem:{
+      defaultProps: {
+        color: "primary",
+      },
+    }
+    
+  },
   palette: {
     primary: {
       main: '#B62682',
@@ -21,8 +35,8 @@ const theme = createTheme({
     error: {
       main: red.A400,
     },
-    info:{
-      main:'#145bc7'
+    info: {
+      main: '#145bc7'
     }
   },
   typography: {

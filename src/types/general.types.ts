@@ -15,3 +15,9 @@ export interface SocialIcon {
   link: string;
   color: string;
 }
+
+
+export interface SelectOption{
+  value: string;
+  label: string;
+}
