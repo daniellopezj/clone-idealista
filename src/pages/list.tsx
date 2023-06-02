@@ -250,6 +250,18 @@ const List = () => {
     maxItems: 100,
     locale: 'es',
     sort: 'asc',
+    propertyType: '',
+    minPrice: '',
+    maxPrice: '',
+    minSize: '',
+    maxSize: '',
+    garage: false,
+    airConditioning: false,
+    elevator: false,
+    terrace: false,
+    swimmingPool: false,
+    garden: false,
+    petsPolicy: '',
   } as FiltersPlaces);
 
   const fetchData = useMemo(
@@ -260,7 +272,12 @@ const List = () => {
   );
   useEffect(() => {
     fetchData();
+    console.log(params);
   }, [fetchData]);
+
+  const handleFilter = (newParams: FiltersPlaces) => {
+    setParams(newParams);
+  };
 
   const optionsRent = [
     {
@@ -306,7 +323,11 @@ const List = () => {
       <div className={localStyles.listContainer}>
         {resultRequest && (
           <div className={localStyles.listContent}>
-            <Filters className="" />
+            <Filters
+              handleFilter={handleFilter}
+              className=""
+              filters={params}
+            />
             <div>
               <ListFloor
                 className={localStyles.listPlaces}

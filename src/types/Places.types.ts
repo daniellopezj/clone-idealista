@@ -21,6 +21,18 @@ export interface FiltersPlaces {
   sort: string;
   locale: string;
   country: string;
+  propertyType: string,
+  minPrice: string,
+  maxPrice: string,
+  minSize: string,
+  maxSize: string,
+  garage: boolean,
+  airConditioning: boolean,
+  elevator: boolean,
+  terrace: boolean,
+  swimmingPool: boolean,
+  garden: boolean,
+  petsPolicy: 'allowed' | ''
 }
 
 export interface ImagesCarousel {
