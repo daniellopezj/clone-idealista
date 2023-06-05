@@ -1,28 +1,42 @@
 .listContainer {
+  display: grid;
+  grid-template-columns: 1fr 22rem 76rem 1fr;
+  grid-row-gap: 1.5rem;
+  grid-column-gap: 1.5rem;
   background-color: #f4f5f2;
-  margin: 0;
 }
 .listContent {
-  display: grid;
-  margin: 0 8%;
+  display: flex;
+  flex-direction: column;
   padding: 1rem 0;
-  grid-template-columns: 20% 1fr;
+  grid-column: 3/4;
+  grid-row: 2/3;
+}
+
+.listContactFilers {
+  grid-column: 2/3;
+  grid-row: 2/3;
+  margin-top: -4rem;
 }
 
 .listHeader {
-  margin: 0 8%;
-  height: 120px;
+  background-color: white;
+  grid-column: 1/5;
+  grid-row: 1/2;
+  height: 8rem;
 }
+
 .listNumberPlaces {
-  margin: 2rem 0;
+  margin: 3rem 8% 5rem;
   font-size: 1.75rem;
   font-weight: bold;
 }
 
 .containerRadios {
   display: flex;
-  margin: 0 8%;
-  padding-left: 17%;
+  grid-column: 3/4;
+  grid-row: 1/2;
+  margin-top: -3rem;
 }
 
 .customInputRadio {
@@ -60,3 +74,27 @@
   margin: 3rem;
 }
 
+.listContainerContact {
+  position: relative;
+}
+
+.listContactMe {
+  background-color: #e1f56e;
+  padding: 1rem;
+  gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  span {
+    font-weight: 500;
+    font-size: 1.2rem;
+    white-space: nowrap;
+  }
+  button {
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+  }
+}
