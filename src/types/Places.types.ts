@@ -104,6 +104,10 @@ export interface Floor {
   preferenceHighlight: boolean;
 }
 
+export interface DetailsFloor extends Floor{
+
+}
+
 export interface ResponseListFloor {
   elementList: Floor[];
   total: number;

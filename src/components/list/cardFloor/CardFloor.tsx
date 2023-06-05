@@ -18,6 +18,7 @@ const CardFloor = ({ floor }: CardFloorProps) => {
       <div className={localStyle.cardCarouselContainer}>
         <BaseCarousel
           className={localStyle.cardCarousel}
+          carouselWidth='100%'
           images={floor.multimedia.images}
         />
       </div>

@@ -272,7 +272,6 @@ const List = () => {
   );
   useEffect(() => {
     fetchData();
-    console.log(params);
   }, [fetchData]);
 
   const handleFilter = (newParams: FiltersPlaces) => {
