@@ -22,6 +22,8 @@ input {
 html,
 body {
   max-width: 100vw;
+  height: 100vh;
+  overflow: auto;
   overflow-x: hidden;
   padding: 0 !important;
 }
