@@ -1,6 +1,13 @@
 .mainContainer {
   background-color: #f4f5f2;
   padding: 10px 20%;
-  
+  display: flex;
+  gap: 10px;
 }
 
+.containerFloor {
+  width: 70%;
+}
+.containerContact {
+  width: 30%;
+}

@@ -23,9 +23,10 @@ const details = () => {
     district: 'Appio Latino',
     country: 'it',
     neighborhood: 'Caffarella',
+    propertyComment:
+      'SOLO ESTUDIANTES o FUNCIONARIOS. Abstenerse quien no cumpla los requisitos. Se alquila estudio amueblado, tamaño de una habitación, céntrico, en el barrio de Arganzuela. Tranquilo y luminoso, con ascensor y 2 ventanas. Al lado del metro de Palos de Moguer y estación de Renfe y metro de Delicias y Atocha (renfe y metro). Cerca del Madrid central y de zonas de ocio, cultura y deportes a un paso. Todos los servicios. Comunidad y Calefacción 24 h incluida. Ascensores. Perfectamente comunicado con todas las lineas de Renfe, Metro y bus. Se pide nómina o aval no inferior a 1800€. No fumadores. No mascotas. 2 meses de fianza. Escribir, por favor, sólo quien cumpla requisitos indicando fecha de entrada, número de personas, edad, domicilio y ocupación actual',
     suggestedTexts: {
-      title:
-        '        Piso en calle Gutiérrez Solana, El Viso, Madrid  Piso en calle Gutiérrez Solana, El Viso, Madrid',
+      title: 'Estudio en calle de Canarias, 38',
     },
     locationId: '0-EU-IT-RM-01-001-097-09-003',
     latitude: 41.8545834,
@@ -65,6 +66,97 @@ const details = () => {
         },
       ],
     },
+    ubication: {
+      title: 'Calle de Canarias, 38',
+      latitude: 40.4017593,
+      longitude: -3.6925296,
+      hasHiddenAddress: false,
+      administrativeAreaLevel4: 'Palos de Moguer',
+      administrativeAreaLevel3: 'Arganzuela',
+      administrativeAreaLevel2: 'Madrid',
+      administrativeAreaLevel1: 'Madrid',
+      locationId: '0-EU-ES-28-07-001-079-02-006',
+      locationName: 'Palos de Moguer, Madrid',
+    },
+    translatedTexts: {
+      floorNumberDescription: 'Planta 5ª',
+      layoutDescription: 'Planta 5ª interior con ascensor',
+      characteristicsDescriptions: [
+        {
+          key: 'features',
+          title: 'Características básicas',
+          detailFeatures: [
+            {
+              phrase: '18 m² construidos, 17 m² útiles',
+            },
+            {
+              phrase: '1 baños',
+            },
+            {
+              phrase: 'Segunda mano/buen estado',
+            },
+          ],
+        },
+        {
+          key: 'layout',
+          title: 'Edificio',
+          detailFeatures: [
+            {
+              phrase: 'Planta 5ª interior',
+            },
+            {
+              phrase: 'Con ascensor',
+            },
+          ],
+        },
+        {
+          key: 'costs',
+          title: 'Precio',
+          detailFeatures: [
+            {
+              phrase: '460 €/mes',
+            },
+            {
+              phrase: '25,56 €/m²',
+            },
+            {
+              phrase: 'Fianza de 2 meses',
+            },
+          ],
+        },
+        {
+          key: 'stats',
+          title: 'Actualizado el 6 de junio',
+          detailFeatures: [
+            {
+              phrase: '56.888 visita',
+            },
+            {
+              phrase: '14 envío a amigos',
+            },
+            {
+              phrase: '1.389 veces guardado como favorito',
+            },
+          ],
+        },
+      ],
+    },
+    moreCharacteristics: {
+      modificationDate: 1686134660000,
+      roomNumber: 2,
+      bathNumber: 1,
+      isAuction: false,
+      housingFurnitures: 'unknown',
+      constructedArea: 70,
+      usableArea: 65,
+      energyCertificationType: 'inProcess',
+      flatLocation: 'external',
+      status: 'good',
+    },
+    modificationDate: {
+      value: 1686006618000,
+      text: 'Anuncio actualizado hace un día',
+    },
     hasLift: true,
     priceByArea: 15,
     hasPlan: false,
@@ -81,7 +173,10 @@ const details = () => {
     <>
       <LayoutDetails>
         <main className={localStyle.mainContainer}>
-          <Floor floor={floor} className='' />
+          <Floor floor={floor} className={localStyle.containerFloor} />
+          <div className={localStyle.containerContact}>
+            <h1>componente comunicacion</h1>
+          </div>
         </main>
       </LayoutDetails>
     </>

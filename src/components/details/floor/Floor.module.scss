@@ -1,8 +1,85 @@
-.cardCarouselContainer {
+.floorContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.floorCarouselContainer {
   width: 300px;
   height: 100%;
 }
 
-.cardCarousel {
+.floorCarousel {
   background-color: white;
+}
+
+.floorContent {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+}
+
+.floorTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 2rem;
+}
+
+.floorAddress {
+  font-size: 0.9rem;
+  color: rgb(94, 94, 94);
+}
+
+.floorPrice {
+  margin-bottom: 0.5rem;
+  :first-child {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  :last-child {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}
+
+.floorSize {
+  font-size: 1.2rem;
+  display: flex;
+  gap: 15px;
+  span {
+    border-left: 1px solid rgb(216, 215, 215);
+    padding-left: 1rem;
+  }
+  :first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+.floorCommentTitle {
+  margin: 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.floorCommentContainer{
+  max-height: 30rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.floorCommentContent {
+  font-size: 1.125rem;
+  line-height: 1.875rem;
+}
+
+.floorAlert{
+  margin: 2rem 0;
+  padding: 1rem 1rem 2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+  box-shadow: 0 0.0625rem rgba(102, 102, 100, 0.24);
+  background-color: #FFF0F9;
+  border-radius: 0.125rem;
+  border: 0.0625rem Solid #FFD1EE;
 }

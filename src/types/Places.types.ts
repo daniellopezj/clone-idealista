@@ -104,7 +104,68 @@ export interface Floor {
   preferenceHighlight: boolean;
 }
 
-export interface DetailsFloor extends Floor{
+interface Location {
+  title: string;
+  latitude: number;
+  longitude: number;
+  hasHiddenAddress: boolean;
+  administrativeAreaLevel4: string;
+  administrativeAreaLevel3: string;
+  administrativeAreaLevel2: string;
+  administrativeAreaLevel1: string;
+  locationId: string;
+  locationName: string;
+
+}
+interface MoreCharacteristics {
+  roomNumber: number;
+  isStudio: boolean;
+  bathNumber: number;
+  isAuction: boolean;
+  housingFurnitures: string;
+  isPenthouse: boolean;
+  energyCertificationType: string;
+  swimmingPool: boolean;
+  flatLocation: string;
+  modificationDate: number;
+  housingPetsAllowed: boolean;
+  isInTopFloor: boolean;
+  constructedArea: number;
+  usableArea: number;
+  lift: boolean;
+  garden: boolean;
+  boxroom: boolean;
+  isDuplex: boolean;
+  status: string;
+}
+
+interface FloorFeature {
+  phrase: string
+}
+export interface FloorDetailsFeatures {
+  key: string
+  title: string
+  detailFeatures: FloorFeature[]
+}
+
+export interface TranslatedTexts {
+  floorNumberDescription: string | null
+  layoutDescription: string | null,
+  characteristicsDescriptions: FloorDetailsFeatures[]
+}
+
+interface DetailsModifications {
+  value: number,
+  text: string
+}
+
+export interface DetailsFloor extends Floor {
+  ubication: Location,
+  moreCharacteristics: MoreCharacteristics,
+  homeType: string,
+  translatedTexts: TranslatedTexts,
+  propertyComment: string,
+  modificationDate: DetailsModifications
 
 }
 
