@@ -3,6 +3,7 @@ import localStyle from '@/components/details/floor/Floor.module.scss';
 import { DetailsFloor } from '@/types/Places.types';
 import BaseCarousel from '@/components/common/base/carousel/BaseCarousel';
 import Features from '@/components/details/features/Features';
+import ErrorIcon from '@mui/icons-material/Error';
 interface FloorProps {
   floor: DetailsFloor;
   className: string;
@@ -42,11 +43,16 @@ const Floor = ({ floor, className }: FloorProps) => {
             {floor.propertyComment}
           </span>
         </div>
-        <div  className={localStyle.floorAlert}>Los anunciantes confían más cuando saben algo sobre ti.</div>
+        <div className={localStyle.floorAlert}>
+          Los anunciantes confían más cuando saben algo sobre ti.
+        </div>
 
         <div className={localStyle.floorFeaturesContainer}>
           <Features className="" features={floor.translatedTexts} />
         </div>
+      </div>
+      <div className={localStyle.floorModifications}>
+        <ErrorIcon /> <span> {floor.modificationDate.text}</span>
       </div>
     </div>
   );

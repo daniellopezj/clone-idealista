@@ -62,7 +62,7 @@
   font-weight: 600;
 }
 
-.floorCommentContainer{
+.floorCommentContainer {
   max-height: 30rem;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -73,13 +73,23 @@
   line-height: 1.875rem;
 }
 
-.floorAlert{
+.floorAlert {
   margin: 2rem 0;
   padding: 1rem 1rem 2rem;
   font-weight: 500;
   font-size: 1.2rem;
   box-shadow: 0 0.0625rem rgba(102, 102, 100, 0.24);
-  background-color: #FFF0F9;
+  background-color: #fff0f9;
   border-radius: 0.125rem;
-  border: 0.0625rem Solid #FFD1EE;
+  border: 0.0625rem Solid #ffd1ee;
+}
+
+.floorModifications {
+  display: flex;
+  gap: 10px;
+  padding: 1rem 2rem;
+  background-color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  border-top: 1px solid  rgb(212, 212, 212);
 }
