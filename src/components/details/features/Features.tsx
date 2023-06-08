@@ -16,7 +16,7 @@ const Features = ({ features, className }: FeaturesProps) => {
           !keysToIgnore.includes(feature.key) && (
             <div key={feature.key}>
               <span className={localStyle.featureTitle}> {feature.title}</span>
-                <ul className={localStyle.featureList}>
+                <ul >
                   {feature.detailFeatures.map((detail) => (
                     <li key={detail.phrase} className={localStyle.featureItem}>{detail.phrase}</li>
                   ))}

@@ -104,7 +104,7 @@ export interface Floor {
   preferenceHighlight: boolean;
 }
 
-interface Location {
+export interface Location {
   title: string;
   latitude: number;
   longitude: number;

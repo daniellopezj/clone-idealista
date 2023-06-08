@@ -4,6 +4,7 @@ import { DetailsFloor } from '@/types/Places.types';
 import BaseCarousel from '@/components/common/base/carousel/BaseCarousel';
 import Features from '@/components/details/features/Features';
 import Price from '@/components/details/price/Price';
+import Location from '@/components/details/location/Location';
 import ErrorIcon from '@mui/icons-material/Error';
 interface FloorProps {
   floor: DetailsFloor;
@@ -58,6 +59,9 @@ const Floor = ({ floor, className }: FloorProps) => {
 
       <section className={localStyle.floorPriceSection}>
         <Price className="" features={floor.translatedTexts} />
+      </section>
+      <section className={localStyle.floorLocationSection}>
+        <Location  className='' location={floor.ubication} />
       </section>
     </div>
   );
