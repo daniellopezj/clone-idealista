@@ -3,6 +3,7 @@ import localStyle from '@/components/details/floor/Floor.module.scss';
 import { DetailsFloor } from '@/types/Places.types';
 import BaseCarousel from '@/components/common/base/carousel/BaseCarousel';
 import Features from '@/components/details/features/Features';
+import Price from '@/components/details/price/Price';
 import ErrorIcon from '@mui/icons-material/Error';
 interface FloorProps {
   floor: DetailsFloor;
@@ -11,14 +12,14 @@ interface FloorProps {
 const Floor = ({ floor, className }: FloorProps) => {
   return (
     <div className={`${className} ${localStyle.floorContainer}`}>
-      <div className={localStyle.cardCarouselContainer}>
+      <section className={localStyle.cardCarouselContainer}>
         <BaseCarousel
           className={localStyle.cardCarousel}
           images={floor.multimedia.images}
           carouselWidth={'100%'}
         />
-      </div>
-      <div className={localStyle.floorContent}>
+      </section>
+      <section className={localStyle.floorContent}>
         <span className={localStyle.floorTitle}>
           {floor.operation === 'rent' ? 'Renta de ' : 'Venta de '}
           {floor.suggestedTexts.title}
@@ -50,10 +51,14 @@ const Floor = ({ floor, className }: FloorProps) => {
         <div className={localStyle.floorFeaturesContainer}>
           <Features className="" features={floor.translatedTexts} />
         </div>
-      </div>
-      <div className={localStyle.floorModifications}>
+      </section>
+      <section className={localStyle.floorModifications}>
         <ErrorIcon /> <span> {floor.modificationDate.text}</span>
-      </div>
+      </section>
+
+      <section className={localStyle.floorPriceSection}>
+        <Price className="" features={floor.translatedTexts} />
+      </section>
     </div>
   );
 };

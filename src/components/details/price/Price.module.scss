@@ -1,0 +1,24 @@
+.priceContainer {
+  display: grid;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.priceTitle {
+  margin: 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.priceItem {
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.85rem;
+  margin: 0.3rem 0;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: 10px;
+  :last-child{
+    font-weight: 600;
+  }
+}
