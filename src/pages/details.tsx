@@ -3,6 +3,7 @@ import LayoutDetails from '@/layout/LayoutDetails';
 import localStyle from '@/components/details/Details.module.scss';
 import { DetailsFloor } from '@/types/Places.types';
 import Floor from '@/components/details/floor/Floor';
+import Contact from '@/components/details/contact/Contact';
 const details = () => {
   const [floor, setFloor] = useState<DetailsFloor>({
     propertyCode: '14823579',
@@ -175,7 +176,7 @@ const details = () => {
         <main className={localStyle.mainContainer}>
           <Floor floor={floor} className={localStyle.containerFloor} />
           <div className={localStyle.containerContact}>
-            <h1>componente comunicacion</h1>
+            <Contact className=""/>
           </div>
         </main>
       </LayoutDetails>

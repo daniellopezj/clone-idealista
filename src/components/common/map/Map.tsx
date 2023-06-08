@@ -30,7 +30,10 @@ const Map = ({ latitude, longitude, popup = '' }: MapProps) => {
     <MapContainer
       center={position}
       zoom={16}
-      style={{ height: '100%', width: '100%' }}scrollWheelZoom={false}
+      style={{ height: '100%', width: '100%' }}
+      scrollWheelZoom={false}
+      dragging={false}
+      doubleClickZoom={false}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

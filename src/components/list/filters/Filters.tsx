@@ -24,7 +24,6 @@ const Filters = ({ className, filters, handleFilter }: FiltersProps) => {
 
   const handleChange = (event: SelectChangeEvent) => {
     const { name, value } = event.target;
-    console.log(event.target);
     const updatedObject = { ...filters, [name]: value };
     handleFilter(updatedObject);
   };
