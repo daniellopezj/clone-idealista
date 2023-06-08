@@ -817,13 +817,13 @@ const List = () => {
 
   return (
     <LayoutList>
-        <div className={localStyles.listHeader}>
-          <h1 className={localStyles.listNumberPlaces}>
-            21.563 casas y pisos en Madrid
-          </h1>
-        </div>
+      <div className={localStyles.listHeader}>
+        <h1 className={localStyles.listNumberPlaces}>
+          21.563 casas y pisos en Madrid
+        </h1>
+      </div>
       <div className={localStyles.listContainer}>
-        <aside className={localStyles.listContactFilers}> 
+        <aside className={localStyles.listContactFilers}>
           <div className={localStyles.listContactMe}>
             <span> Trabajemos Juntos </span>
             <Button

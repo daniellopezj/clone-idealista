@@ -17,7 +17,7 @@
   display: grid;
   grid-template-columns: 2fr 3fr;
   gap: 10px;
-  :last-child{
+  :last-child {
     font-weight: 600;
   }
 }

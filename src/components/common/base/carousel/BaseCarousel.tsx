@@ -25,7 +25,7 @@ const BaseCarousel = ({
       showIndicators={false}
     >
       {images.map((image, i) => (
-        <img key={`image${i}`} alt="Floor image" src={image.url} />
+        <Image key={`image${i}`} alt="Floor image" src={image.url} width={600} height={600} />
       ))}
     </Carousel>
   );

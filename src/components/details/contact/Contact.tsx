@@ -21,7 +21,7 @@ const Contact = ({ className }: ContactPorps) => {
     'TypeScript',
     'Cypress',
     'Jest',
-    'Mongo db '
+    'Mongo db ',
   ];
   return (
     <div className={`${className} ${localStyle.contactContainer}`}>

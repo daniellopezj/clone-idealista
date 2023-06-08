@@ -26,7 +26,7 @@ const Price = ({ features, className }: PriceProps) => {
           keysToUse.includes(feature.key) && (
             <div key={feature.key}>
               <span className={localStyle.priceTitle}> {feature.title}</span>
-              <ul >
+              <ul>
                 {feature.detailFeatures.map((detail) => (
                   <li key={detail.phrase} className={localStyle.priceItem}>
                     {addText(detail.phrase) && (

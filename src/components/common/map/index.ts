@@ -4,4 +4,4 @@ const MapComponent = dynamic(() => import('./Map'), {
   ssr: false,
 });
 
-export default  MapComponent ;
+export default MapComponent;

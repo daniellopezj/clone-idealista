@@ -4,8 +4,8 @@ import localStyle from '@/components/details/Details.module.scss';
 import { DetailsFloor } from '@/types/Places.types';
 import Floor from '@/components/details/floor/Floor';
 import Contact from '@/components/details/contact/Contact';
-const details = () => {
-  const [floor, setFloor] = useState<DetailsFloor>({
+const Details = () => {
+  const [floor] = useState<DetailsFloor>({
     propertyCode: '14823579',
     thumbnail:
       'https://img3.idealista.com/blur/WEB_LISTING-M/90/id.pro.es.image.master/a7/6d/79/1053351520.jpg',
@@ -176,7 +176,7 @@ const details = () => {
         <main className={localStyle.mainContainer}>
           <Floor floor={floor} className={localStyle.containerFloor} />
           <div className={localStyle.containerContact}>
-            <Contact className=""/>
+            <Contact className="" />
           </div>
         </main>
       </LayoutDetails>
@@ -184,4 +184,4 @@ const details = () => {
   );
 };
 
-export default details;
+export default Details;

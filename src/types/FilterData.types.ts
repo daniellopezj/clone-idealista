@@ -1,43 +1,43 @@
-import { SelectOption } from "./general.types";
+import { SelectOption } from './general.types';
 
 export const propertyType: SelectOption[] = [
   {
     label: 'Obra nueva',
-    value: 'newDevelopments'
+    value: 'newDevelopments',
   },
   {
     label: 'Viviendas',
-    value: 'homes'
+    value: 'homes',
   },
   {
     label: 'Habitaciones',
-    value: 'bedrooms'
+    value: 'bedrooms',
   },
   {
     label: 'Oficinas',
-    value: 'offices'
+    value: 'offices',
   },
   {
     label: 'Terrenos',
-    value: 'lands'
+    value: 'lands',
   },
   {
     label: 'Garajes',
-    value: 'garages'
+    value: 'garages',
   },
   {
     label: 'Locales',
-    value: 'premises'
+    value: 'premises',
   },
   {
     label: 'Trasteros',
-    value: 'storageRooms'
+    value: 'storageRooms',
   },
   {
     label: 'Edificios',
-    value: 'buildings'
+    value: 'buildings',
   },
-]
+];
 
 export const minPrice: SelectOption[] = [
   {
@@ -84,7 +84,7 @@ export const minPrice: SelectOption[] = [
     label: 'Sin limite',
     value: 'Max',
   },
-]
+];
 export const maxPrice: SelectOption[] = [
   {
     label: 'Máx',
@@ -134,7 +134,7 @@ export const maxPrice: SelectOption[] = [
     label: 'Sin limite',
     value: 'Max',
   },
-]
+];
 export const minSize: SelectOption[] = [
   {
     label: 'Min',
@@ -180,7 +180,7 @@ export const minSize: SelectOption[] = [
     label: 'Sin limite',
     value: 'Max',
   },
-]
+];
 export const maxSize: SelectOption[] = [
   {
     label: 'Min',
@@ -210,7 +210,7 @@ export const maxSize: SelectOption[] = [
     label: '150 m²',
     value: '150',
   },
- 
+
   {
     label: '200 m²',
     value: '200',
@@ -227,9 +227,9 @@ export const maxSize: SelectOption[] = [
     label: '500 m²',
     value: '500',
   },
-  
+
   {
     label: 'Sin limite',
     value: 'Max',
   },
-]
+];

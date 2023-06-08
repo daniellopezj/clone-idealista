@@ -18,7 +18,7 @@ const CardFloor = ({ floor }: CardFloorProps) => {
       <div className={localStyle.cardCarouselContainer}>
         <BaseCarousel
           className={localStyle.cardCarousel}
-          carouselWidth='100%'
+          carouselWidth="100%"
           images={floor.multimedia.images}
         />
       </div>
@@ -65,10 +65,10 @@ const CardFloor = ({ floor }: CardFloorProps) => {
             </Button>
           </div>
           <div>
-            <IconButton aria-label="delete"  color="info">
+            <IconButton aria-label="delete" color="info">
               <DeleteIcon />
             </IconButton>
-            <IconButton aria-label="favorite"  color="info">
+            <IconButton aria-label="favorite" color="info">
               <FavoriteIcon />
             </IconButton>
           </div>

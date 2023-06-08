@@ -21,18 +21,18 @@ export interface FiltersPlaces {
   sort: string;
   locale: string;
   country: string;
-  propertyType: string,
-  minPrice: string,
-  maxPrice: string,
-  minSize: string,
-  maxSize: string,
-  garage: boolean,
-  airConditioning: boolean,
-  elevator: boolean,
-  terrace: boolean,
-  swimmingPool: boolean,
-  garden: boolean,
-  petsPolicy: 'allowed' | ''
+  propertyType: string;
+  minPrice: string;
+  maxPrice: string;
+  minSize: string;
+  maxSize: string;
+  garage: boolean;
+  airConditioning: boolean;
+  elevator: boolean;
+  terrace: boolean;
+  swimmingPool: boolean;
+  garden: boolean;
+  petsPolicy: 'allowed' | '';
 }
 
 export interface ImagesCarousel {
@@ -45,16 +45,16 @@ export interface FloorMultimedia {
 
 export interface FloorContact {
   phone1: {
-    phoneNumber: string
-    formattedPhone: string
-    prefix: string
-    phoneNumberForMobileDialing: string
-    nationalNumber: boolean
-  },
-  agencyLogo?: string
-  contactName: string
-  userType: string
-  contactMethod: string
+    phoneNumber: string;
+    formattedPhone: string;
+    prefix: string;
+    phoneNumberForMobileDialing: string;
+    nationalNumber: boolean;
+  };
+  agencyLogo?: string;
+  contactName: string;
+  userType: string;
+  contactMethod: string;
 }
 
 export interface Floor {
@@ -115,7 +115,6 @@ export interface Location {
   administrativeAreaLevel1: string;
   locationId: string;
   locationName: string;
-
 }
 interface MoreCharacteristics {
   roomNumber: number;
@@ -140,33 +139,32 @@ interface MoreCharacteristics {
 }
 
 interface FloorFeature {
-  phrase: string
+  phrase: string;
 }
 export interface FloorDetailsFeatures {
-  key: string
-  title: string
-  detailFeatures: FloorFeature[]
+  key: string;
+  title: string;
+  detailFeatures: FloorFeature[];
 }
 
 export interface TranslatedTexts {
-  floorNumberDescription: string | null
-  layoutDescription: string | null,
-  characteristicsDescriptions: FloorDetailsFeatures[]
+  floorNumberDescription: string | null;
+  layoutDescription: string | null;
+  characteristicsDescriptions: FloorDetailsFeatures[];
 }
 
 interface DetailsModifications {
-  value: number,
-  text: string
+  value: number;
+  text: string;
 }
 
 export interface DetailsFloor extends Floor {
-  ubication: Location,
-  moreCharacteristics: MoreCharacteristics,
-  homeType: string,
-  translatedTexts: TranslatedTexts,
-  propertyComment: string,
-  modificationDate: DetailsModifications
-
+  ubication: Location;
+  moreCharacteristics: MoreCharacteristics;
+  homeType: string;
+  translatedTexts: TranslatedTexts;
+  propertyComment: string;
+  modificationDate: DetailsModifications;
 }
 
 export interface ResponseListFloor {

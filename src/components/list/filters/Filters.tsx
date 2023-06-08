@@ -4,7 +4,13 @@ import localStyles from '@/components/list/filters/Filters.module.scss';
 import Grid from '@mui/material/Grid';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
-import { propertyType, minPrice,maxPrice, minSize, maxSize } from '@/types/FilterData.types';
+import {
+  propertyType,
+  minPrice,
+  maxPrice,
+  minSize,
+  maxSize,
+} from '@/types/FilterData.types';
 import { FiltersPlaces } from '@/types/Places.types';
 import { SelectChangeEvent } from '@mui/material';
 interface FiltersProps {

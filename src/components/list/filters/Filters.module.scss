@@ -1,25 +1,24 @@
-.filterContainer{
+.filterContainer {
   padding: 1.5rem;
   background-color: white;
   height: min-content;
-
 }
 
-.filterTitle{
+.filterTitle {
   margin: 0.5rem 0;
   font-weight: 500;
   font-size: 1.1rem;
 }
 
-.filterRow{
+.filterRow {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
 }
 
-.paddingItem{
+.paddingItem {
   padding-right: 4%;
 }
-.label{
+.label {
   font-size: 1.1rem;
 }

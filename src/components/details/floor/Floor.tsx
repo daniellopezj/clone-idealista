@@ -61,7 +61,7 @@ const Floor = ({ floor, className }: FloorProps) => {
         <Price className="" features={floor.translatedTexts} />
       </section>
       <section className={localStyle.floorLocationSection}>
-        <Location  className='' location={floor.ubication} />
+        <Location className="" location={floor.ubication} />
       </section>
     </div>
   );

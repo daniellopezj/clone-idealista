@@ -42,14 +42,13 @@ const Footer = ({ className }: any) => {
                   href={icon.link}
                   onMouseOver={() => MouseOver(icon.id)}
                   onMouseOut={() => MouseOut()}
-                      className={localStyles.footerSocialLink}
+                  className={localStyles.footerSocialLink}
                 >
                   <FontAwesomeIcon
                     style={{
                       color: ishover === icon.id ? icon.color : '#8E8F8C',
                     }}
                     icon={icon.icon}
-                
                   ></FontAwesomeIcon>
                 </Link>
               ))}
