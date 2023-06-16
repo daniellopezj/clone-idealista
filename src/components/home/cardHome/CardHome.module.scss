@@ -62,3 +62,30 @@
 .cardLink:hover {
   text-decoration: underline;
 }
+
+
+@media (max-width: 599px) {
+  .containerCard {
+    margin: 1rem ;
+    flex-direction: column;
+  }
+  .containerPicture{
+    height: auto;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  .cardMessage {
+    width: 100%;
+    margin-left: 0;
+    box-shadow: initial;
+    border: solid 0.0625rem rgb(216, 216, 216);
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+
+}
+
+@media (min-width: 960px) {
+  /* Desktop-specific CSS rules go here */
+}

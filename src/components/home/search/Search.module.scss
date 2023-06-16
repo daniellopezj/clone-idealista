@@ -115,3 +115,18 @@
   bottom: -18px;
   font-size: 0.8rem;
 }
+
+
+@media (max-width: 599px) {
+.title{
+  display: none;
+}
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+
+}
+
+@media (min-width: 960px) {
+  /* Desktop-specific CSS rules go here */
+}

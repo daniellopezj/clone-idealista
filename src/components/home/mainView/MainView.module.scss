@@ -6,3 +6,18 @@
   justify-content: center;
   width: 100%;
 }
+
+@media (max-width: 599px) {
+  .customImage {
+    height: 180px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .customImage {
+    height: 400px;
+  }
+}
+
+@media (min-width: 960px) {
+}

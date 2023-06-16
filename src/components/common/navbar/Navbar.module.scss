@@ -10,3 +10,26 @@
 .logo {
   position: relative;
 }
+
+@media (max-width: 599px) {
+  .main {
+    padding: 0.5rem;
+  }
+  .logo {
+    width: 120px;
+    max-width: initial;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .main {
+    padding: 0.5rem 1rem;
+  }
+  .logo {
+    width: 150px;
+    max-width: initial;
+  }
+}
+
+@media (min-width: 960px) {
+}
