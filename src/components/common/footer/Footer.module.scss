@@ -43,7 +43,7 @@
 .footerContentTitle1,
 .footerSocialTitle {
   text-transform: uppercase;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .footerSocialLink {
@@ -52,7 +52,7 @@
   padding: 7px 0px;
   border-radius: 50%;
   color: #8e8f8c;
-  width: 45px;
+  width: 22px;
   height: 25px;
 }
 
@@ -88,4 +88,9 @@
 
 .bold {
   font-weight: bold;
+}
+
+.footerSocialButtons {
+  display: flex;
+  gap: 0 15px;
 }

@@ -1,0 +1,25 @@
+.locationContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.containerMap {
+  width: 100%;
+  height: 400px;
+}
+
+.locationTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.locationKeys {
+  margin-bottom: 0.5rem;
+  span {
+    font-size: 1.1rem;
+    line-height: 1.85rem;
+  }
+  display: flex;
+  flex-direction: column;
+}

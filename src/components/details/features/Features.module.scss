@@ -1,0 +1,35 @@
+.featureContainer {
+  display: grid;
+  padding: 0.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 1.5rem;
+}
+
+.featureTitle {
+  margin: 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.featureItem {
+  position: relative;
+  padding-left: 15px;
+  font-size: 1.1rem;
+  line-height: 1.85rem;
+  margin: 0.3rem 0;
+}
+
+.featureItem::before {
+  content: '';
+  background-color: #6f6f6d;
+  border-radius: 50%;
+  display: inline-block;
+  height: 0.25rem;
+  left: 3px;
+  margin-bottom: 0.25rem;
+  margin-right: 0.5rem;
+  position: absolute;
+  top: 0.8rem;
+  width: 0.25rem;
+}

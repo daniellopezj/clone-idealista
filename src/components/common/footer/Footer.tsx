@@ -35,20 +35,20 @@ const Footer = ({ className }: any) => {
           </div>
           <div className={localStyles.footerSocial}>
             <h1 className={localStyles.footerSocialTitle}>Social</h1>
-            <div>
+            <div className={localStyles.footerSocialButtons}>
               {socialIcons.map((icon) => (
                 <Link
                   key={icon.id}
                   href={icon.link}
                   onMouseOver={() => MouseOver(icon.id)}
                   onMouseOut={() => MouseOut()}
+                  className={localStyles.footerSocialLink}
                 >
                   <FontAwesomeIcon
                     style={{
                       color: ishover === icon.id ? icon.color : '#8E8F8C',
                     }}
                     icon={icon.icon}
-                    className={localStyles.footerSocialLink}
                   ></FontAwesomeIcon>
                 </Link>
               ))}
