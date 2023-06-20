@@ -18,6 +18,10 @@
   background-color: white;
 }
 
+.imageItem{
+  height: 250px !important;
+}
+
 .cardBody {
   width: calc(100% - 350px);
   background-color: white;
@@ -91,3 +95,19 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 599px) {
+  .imageItem{
+    height: 250px !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .imageItem{
+    height: 500px !important;
+  }
+}
+
+@media (min-width: 960px) {
+}
+

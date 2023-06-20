@@ -6,3 +6,24 @@
   max-width: initial !important;
   padding: 10px 20% !important;
 }
+
+@media (max-width: 599px) {
+  .listContainer > section {
+    margin: 0 !important;
+  }
+  .transformHeader > nav {
+    padding: 0.5rem 1rem  !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .listContainer > section {
+    margin: 0 !important;
+  }
+  .transformHeader > nav {
+    padding: 0.5rem 1rem  !important;
+  }
+}
+
+@media (min-width: 960px) {
+}

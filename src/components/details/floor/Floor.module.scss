@@ -3,11 +3,6 @@
   flex-direction: column;
 }
 
-.floorCarouselContainer {
-  width: 300px;
-  height: 100%;
-}
-
 .floorCarousel {
   background-color: white;
 }
@@ -107,4 +102,110 @@
   background-color: white;
   margin-bottom: 1.5rem;
   box-shadow: 0 0.0625rem 0.125rem 0 rgba(102, 102, 100, 0.24);
+}
+
+
+.itemImage{
+  height: 600px !important;
+}
+
+@media (max-width: 599px) {
+  .itemImage{
+    height: 250px !important;
+  }
+  .floorContent {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .floorTitle {
+    font-size: 1.4rem;
+    line-height: 1.5rem;
+  }
+  .floorPrice {
+    :first-child {
+      font-size: 1.2rem;
+    }
+    :last-child {
+      font-size: 1.1rem;
+    }
+  }
+  .floorSize {
+    font-size: 1rem;
+    gap: 5px;
+    span {
+      padding-left: 0.5rem;
+    }
+  }
+  .floorCommentTitle {
+    margin: 1rem 0 0;
+    font-size: 1.2rem;
+  }
+  .floorCommentContainer {
+    max-height: 100rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .floorCommentContent {
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+  }
+  .floorAlert {
+    font-size: 1rem;
+  }
+  .floorPriceSection,
+  .floorLocationSection {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .floorContent {
+    padding: 1rem;
+    margin: 1.5rem 1rem 0;
+  }
+  .floorTitle {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+  .floorPrice {
+    :first-child {
+      font-size: 1.3rem;
+    }
+    :last-child {
+      font-size: 1.2rem;
+    }
+  }
+  .floorSize {
+    font-size: 1rem;
+    gap: 5px;
+    span {
+      padding-left: 0.5rem;
+    }
+  }
+  .floorCommentTitle {
+    margin: 0.5rem 0 0;
+  }
+  .floorCommentContainer {
+    max-height: initial;
+  }
+  .floorCommentContent {
+    font-size: 1rem;
+    line-height: 1.7rem;
+  }
+  .floorModifications {
+    margin: 0 1rem 1rem;
+  }
+  .floorPriceSection, .floorLocationSection{
+    margin: 1rem;
+    padding: 1rem;
+    
+  }
+  .itemImage{
+    height: 500px !important;
+  }
+}
+
+@media (min-width: 960px) {
 }

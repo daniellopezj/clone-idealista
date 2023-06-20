@@ -23,3 +23,46 @@
   display: flex;
   flex-direction: column;
 }
+
+@media (max-width: 599px) {
+  .locationContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .containerMap {
+    width: 100%;
+    height: 400px;
+  }
+
+  .locationTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .locationKeys {
+    span {
+      font-size: 1rem;
+      line-height: 1.8rem;
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .locationContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  .locationTitle {
+    margin-bottom: 0;
+  }
+  .locationKeys {
+    span {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+}
