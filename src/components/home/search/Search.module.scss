@@ -121,6 +121,10 @@
   font-size: 0.8rem;
 }
 
+.iconSearch {
+  width: 25px;
+}
+
 @media (max-width: 599px) {
   .containerTitle {
     display: none;
@@ -145,6 +149,10 @@
     gap: 20px;
   }
 
+  .iconSearch {
+    width: 23px;
+  }
+  
   .containerInputSearch {
     width: 100%;
   }
@@ -152,6 +160,11 @@
   .customInputSearch {
     height: 40px;
   }
+
+  .customInputSearch + svg {
+    left: 13px;
+  }
+  
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
@@ -168,7 +181,12 @@
     text-align: center;
     font-size: 1.3rem;
   }
-
+  .iconSearch {
+    width: 23px;
+  }
+  .customInputSearch + svg {
+    left: 13px;
+  }
   .searchContainerLine {
     display: flex;
     margin: 0;
@@ -188,4 +206,5 @@
 
 @media (min-width: 960px) {
   /* Desktop-specific CSS rules go here */
+
 }

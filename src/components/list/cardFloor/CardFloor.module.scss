@@ -1,0 +1,93 @@
+.cardContainer {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  height: 265px;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.cardCarouselContainer {
+  width: 350px;
+  height: 100%;
+}
+
+.cardCarousel {
+  background-color: white;
+}
+
+.cardBody {
+  width: calc(100% - 350px);
+  background-color: white;
+  padding: 1rem 1rem 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardBodyContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  position: relative;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bodyTitle {
+  color: #145bc7;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding-right: 8rem;
+  cursor: pointer;
+}
+
+.bodyTitle:hover {
+  text-decoration: underline;
+}
+
+.bodyPrice {
+  :first-child {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+
+.bodyFeatures {
+  display: flex;
+  gap: 25px;
+}
+
+.agency {
+  position: absolute;
+  right: -1rem;
+  top: -1rem;
+  width: 8rem;
+}
+
+.bodyDescription {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  overflow: hidden;
+}
+
+.cardButton {
+  margin-right: 8px !important;
+}
+.cardButton {
+  margin-right: 8px !important;
+}
+
+.cardContact {
+  padding-top: 0.5rem;
+  border-top: 1px solid #e8e8e8;
+  display: flex;
+  justify-content: space-between;
+}

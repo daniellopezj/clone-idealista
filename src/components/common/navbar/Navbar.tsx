@@ -9,8 +9,8 @@ const Navbar = () => {
         className={localStyles.logo}
         src="/idealista-logo.svg"
         alt="Next.js Logo"
-        width={300}
-        height={70}
+        width={220}
+        height={50}
         priority
       />
       <span> icon </span>

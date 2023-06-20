@@ -1,0 +1,84 @@
+.contactContainer {
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+}
+.contactContent {
+  background-color: #fff;
+  border-radius: 0.125rem;
+  border: solid 0.0625rem #e0e0dc;
+  box-shadow: 0 0.125rem 0.5rem rgba(102, 102, 100, 0.24);
+  border-top: 0.25rem solid #b62682;
+  padding: 1rem 0.5rem 1rem 1rem;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  z-index: 1;
+}
+
+.contactContainerImage {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.customImage {
+  border-radius: 50%;
+}
+
+.contactName {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.contactProfession {
+  font-size: 0.85rem;
+  margin-top: -3px;
+  color: rgb(96, 96, 96);
+}
+
+.contactDescripcion {
+  margin: 1rem 0;
+  font-size: 0.8rem;
+  text-align: start;
+  color: rgb(96, 96, 96);
+}
+
+.contactTitleSection {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.contactTechnologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.contactActions {
+  margin: 4rem 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  button {
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 0.85rem;
+    border-radius: 20px;
+    padding: 5px 15px;
+  }
+}
+
+.contactPortfolio {
+  color: #b62682;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+.contactPortfolio:hover {
+  text-decoration: underline;
+}
