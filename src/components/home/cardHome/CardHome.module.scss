@@ -83,7 +83,12 @@
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-
+  .containerCard {
+    margin: 1rem 2rem;
+  }
+  .containerPicture{
+    width: 100%;
+  }
 }
 
 @media (min-width: 960px) {

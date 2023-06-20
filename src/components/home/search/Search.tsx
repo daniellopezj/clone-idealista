@@ -68,8 +68,8 @@ const Search = () => {
   return (
     <div className={localStyles.mainContainerSearch}>
       <div className={localStyles.contentSearch}>
-        <div className={localStyles.title}>
-          <h2 className="text-2xl font-bold">
+        <div className={localStyles.containerTitle}>
+          <h2 className={localStyles.title}>
             ¿Realmente compras algo para toda la vida?
           </h2>
         </div>
