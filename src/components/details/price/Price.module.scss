@@ -22,19 +22,18 @@
   }
 }
 
-
 @media (max-width: 599px) {
   .priceContainer {
     display: grid;
     margin-bottom: 1.5rem;
   }
-  
+
   .priceTitle {
     margin: 1rem 0;
     font-size: 1.1rem;
     font-weight: 600;
   }
-  
+
   .priceItem {
     font-size: 1rem;
     line-height: 1.85rem;
@@ -52,12 +51,12 @@
   .priceContainer {
     display: grid;
   }
-  
+
   .priceTitle {
     margin: 1rem 0;
     font-weight: 600;
   }
-  
+
   .priceItem {
     font-size: 1.1rem;
     line-height: 1.85rem;

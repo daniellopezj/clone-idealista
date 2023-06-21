@@ -63,13 +63,12 @@
   text-decoration: underline;
 }
 
-
 @media (max-width: 599px) {
   .containerCard {
-    margin: 1rem ;
+    margin: 1rem;
     flex-direction: column;
   }
-  .containerPicture{
+  .containerPicture {
     height: auto;
     width: 100%;
     margin-top: 2rem;
@@ -86,7 +85,7 @@
   .containerCard {
     margin: 1rem 2rem;
   }
-  .containerPicture{
+  .containerPicture {
     width: 100%;
   }
 }

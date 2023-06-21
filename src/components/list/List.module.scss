@@ -101,14 +101,13 @@
   }
 }
 
-
 @media (max-width: 599px) {
-
   .listContainer {
     display: flex;
   }
-  
-  .listContactFilers, .containerRadios{
+
+  .listContactFilers,
+  .containerRadios {
     display: none;
   }
   .listContent {
@@ -126,11 +125,10 @@
   .listNumberPlaces {
     margin: 1rem;
     font-size: 1.4rem;
-  } 
+  }
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-
 }
 
 @media (min-width: 960px) {

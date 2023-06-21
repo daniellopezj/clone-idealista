@@ -152,7 +152,7 @@
   .iconSearch {
     width: 23px;
   }
-  
+
   .containerInputSearch {
     width: 100%;
   }
@@ -164,7 +164,6 @@
   .customInputSearch + svg {
     left: 13px;
   }
-  
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
@@ -195,16 +194,15 @@
     gap: 20px;
   }
 
-  .containerInputSearch{
+  .containerInputSearch {
     width: 100%;
   }
 
-  .customInputSearch{
+  .customInputSearch {
     height: 40px;
   }
 }
 
 @media (min-width: 960px) {
   /* Desktop-specific CSS rules go here */
-
 }

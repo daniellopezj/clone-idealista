@@ -104,13 +104,12 @@
   box-shadow: 0 0.0625rem 0.125rem 0 rgba(102, 102, 100, 0.24);
 }
 
-
-.itemImage{
+.itemImage {
   height: 600px !important;
 }
 
 @media (max-width: 599px) {
-  .itemImage{
+  .itemImage {
     height: 250px !important;
   }
   .floorContent {
@@ -197,12 +196,12 @@
   .floorModifications {
     margin: 0 1rem 1rem;
   }
-  .floorPriceSection, .floorLocationSection{
+  .floorPriceSection,
+  .floorLocationSection {
     margin: 1rem;
     padding: 1rem;
-    
   }
-  .itemImage{
+  .itemImage {
     height: 500px !important;
   }
 }
