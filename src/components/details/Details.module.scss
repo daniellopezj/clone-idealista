@@ -1,6 +1,9 @@
 .mainContainer {
   background-color: #f4f5f2;
-  padding: 10px 20%;
+}
+.mainContent {
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   gap: 10px;
 }
@@ -28,7 +31,6 @@
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-
   .mainContainer {
     background-color: #f4f5f2;
     padding: 0;

@@ -6,7 +6,10 @@ import localStyles from '@/styles/LayoutDetails.module.scss';
 const LayoutList = ({ children }: any) => {
   return (
     <>
+    <div className={localStyles.headerContent}>
+
       <SimpleNavbar className={localStyles.transformHeader} />
+    </div>
       <div>
         <main>{children}</main>
         <Footer className={localStyles.listContainer} />

@@ -173,12 +173,14 @@ const Details = () => {
   return (
     <>
       <LayoutDetails>
-        <main className={localStyle.mainContainer}>
-          <Floor floor={floor} className={localStyle.containerFloor} />
-          <div className={localStyle.containerContact}>
-            <Contact className="" />
+        <div className={localStyle.mainContainer}>
+          <div className={localStyle.mainContent}>
+            <Floor floor={floor} className={localStyle.containerFloor} />
+            <div className={localStyle.containerContact}>
+              <Contact className="" />
+            </div>
           </div>
-        </main>
+        </div>
       </LayoutDetails>
     </>
   );
