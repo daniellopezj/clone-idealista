@@ -58,10 +58,14 @@ const CardFloor = ({ floor }: CardFloorProps) => {
               color="info"
               startIcon={<PhoneIcon />}
             >
-              {floor.contactInfo?.phone1.phoneNumber}
+              Llamar
             </Button>
-
-            <Button variant="text" color="info" startIcon={<CommentIcon />}>
+            <Button
+              className={localStyle.contactButton}
+              variant="text"
+              color="info"
+              startIcon={<CommentIcon />}
+            >
               Contact
             </Button>
           </div>

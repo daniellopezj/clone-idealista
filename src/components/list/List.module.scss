@@ -5,6 +5,7 @@
   grid-column-gap: 1.5rem;
   background-color: #f4f5f2;
 }
+
 .listContent {
   display: flex;
   flex-direction: column;
@@ -98,4 +99,39 @@
     text-transform: capitalize;
     font-size: 1.1rem;
   }
+}
+
+
+@media (max-width: 599px) {
+
+  .listContainer {
+    display: flex;
+  }
+  
+  .listContactFilers, .containerRadios{
+    display: none;
+  }
+  .listContent {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    grid-column: initial;
+    grid-row: initial;
+  }
+  .listHeader {
+    grid-column: initial;
+    grid-row: initial;
+    height: auto;
+  }
+  .listNumberPlaces {
+    margin: 1rem;
+    font-size: 1.4rem;
+  } 
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+
+}
+
+@media (min-width: 960px) {
 }

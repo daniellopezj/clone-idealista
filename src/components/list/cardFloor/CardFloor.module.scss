@@ -18,7 +18,7 @@
   background-color: white;
 }
 
-.imageItem{
+.imageItem {
   height: 250px !important;
 }
 
@@ -84,9 +84,7 @@
 
 .cardButton {
   margin-right: 8px !important;
-}
-.cardButton {
-  margin-right: 8px !important;
+text-transform: capitalize;
 }
 
 .cardContact {
@@ -97,17 +95,56 @@
 }
 
 @media (max-width: 599px) {
-  .imageItem{
-    height: 250px !important;
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: initial;
+    height: auto;
+    width: 100%;
+  }
+  .cardCarouselContainer {
+    width: 100%;
+    height: 100%;
+  }
+  .cardBody {
+    width: 100%;
+    padding: 1rem 1rem 0;
+    justify-content: flex-start;
+  }
+  .bodyFeatures {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+  .agency {
+    display: none;
+  }
+
+  .bodyPrice {
+    :first-child {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+  }
+
+  .bodyTitle {
+    font-size: 1rem;
+    padding-right: 0;
+  }
+  .bodyDescription {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+  }
+  .cardButton{
+    text-transform: capitalize;
+  }
+  .contactButton{
+    display: none !important;
   }
 }
 
 @media (min-width: 600px) and (max-width: 959px) {
-  .imageItem{
-    height: 500px !important;
-  }
 }
 
 @media (min-width: 960px) {
 }
-
