@@ -26,6 +26,8 @@ const BaseCarousel = ({
       animationHandler={'slide'}
       showThumbs={false}
       showIndicators={false}
+      preventMovementUntilSwipeScrollTolerance={true}
+      swipeScrollTolerance={50}
     >
       {images.map((image, i) => (
         <Image

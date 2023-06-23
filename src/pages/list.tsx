@@ -859,7 +859,6 @@ const List = () => {
             </label>
           ))}
         </div>
-
         {resultRequest && (
           <div className={localStyles.listContent}>
             <ListFloor
