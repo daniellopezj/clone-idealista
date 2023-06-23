@@ -755,7 +755,6 @@ const List = () => {
     itemsPerPage: 40,
     numPaginations: 0,
     hiddenResults: false,
-
     alertName: 'Homes in subdistrict Caffarella, Roma',
     lowerRangePosition: 0,
     upperRangePosition: 40,
@@ -819,7 +818,7 @@ const List = () => {
     <LayoutList>
       <div className={localStyles.listHeader}>
         <h1 className={localStyles.listNumberPlaces}>
-          21.563 casas y pisos en Madrid
+          21.563 casas y pisos en alquiler en Madrid
         </h1>
       </div>
       <div className={localStyles.listContainer}>
@@ -860,7 +859,6 @@ const List = () => {
             </label>
           ))}
         </div>
-
         {resultRequest && (
           <div className={localStyles.listContent}>
             <ListFloor

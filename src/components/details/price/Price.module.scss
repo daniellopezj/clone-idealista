@@ -21,3 +21,53 @@
     font-weight: 600;
   }
 }
+
+@media (max-width: 599px) {
+  .priceContainer {
+    display: grid;
+    margin-bottom: 1.5rem;
+  }
+
+  .priceTitle {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .priceItem {
+    font-size: 1rem;
+    line-height: 1.85rem;
+    display: flex;
+    margin: 0;
+    justify-content: space-between;
+    gap: 10px;
+    :last-child {
+      font-weight: 600;
+    }
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .priceContainer {
+    display: grid;
+  }
+
+  .priceTitle {
+    margin: 1rem 0;
+    font-weight: 600;
+  }
+
+  .priceItem {
+    font-size: 1.1rem;
+    line-height: 1.85rem;
+    display: flex;
+    margin: 0;
+    gap: 10px;
+    :last-child {
+      font-weight: 600;
+    }
+  }
+}
+
+@media (min-width: 960px) {
+}

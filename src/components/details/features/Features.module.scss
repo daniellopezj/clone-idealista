@@ -33,3 +33,33 @@
   top: 0.8rem;
   width: 0.25rem;
 }
+
+@media (max-width: 599px) {
+  .featureContainer {
+    padding: 0;
+    gap: 25px;
+    grid-template-columns: 1fr;
+    margin-bottom: 1.5rem;
+  }
+
+  .featureTitle {
+    font-size: 1.1rem;
+  }
+
+  .featureItem {
+    font-size: 1rem;
+    line-height: 1.2rem;
+    margin: 0.5rem 0;
+  }
+
+  .featureItem::before {
+    content: '';
+    top: 0.5rem;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+}
+
+@media (min-width: 960px) {
+}

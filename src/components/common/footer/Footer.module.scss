@@ -94,3 +94,60 @@
   display: flex;
   gap: 0 15px;
 }
+
+@media (max-width: 599px) {
+  .footer {
+    padding: 2rem 0;
+  }
+  .footerContainer {
+    flex-direction: column;
+    justify-content: initial;
+    display: flex;
+    padding: 0 1rem;
+  }
+  .footerContent {
+    max-width: 100%;
+  }
+  .logo {
+    width: 120px;
+  }
+  .footerContentDescription {
+    margin-top: 0.5rem;
+    margin-left: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  .footerSocial {
+    width: 100%;
+  }
+  .footerSocialTitle {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+  .footerContainer {
+    padding: 0 2rem;
+  }
+  .logo {
+    width: 150px;
+  }
+  .footerContentDescription {
+    margin-top: 0.5rem;
+    margin-left: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+  }
+  .footerSocialTitle {
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media (min-width: 960px) {
+  /* Desktop-specific CSS rules go here */
+}

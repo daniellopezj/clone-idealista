@@ -2,7 +2,31 @@
   max-width: initial !important;
   margin: 0 20% !important;
 }
+.headerContent {
+  background-color: #e1f56e;
+}
 .transformHeader > nav {
-  max-width: initial !important;
-  padding: 10px 20% !important;
+  margin: 0 auto !important;
+  max-width: 1200px;
+}
+
+@media (max-width: 599px) {
+  .listContainer > section {
+    margin: 0 !important;
+  }
+  .transformHeader > nav {
+    padding: 0.5rem 1rem !important;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 959px) {
+  .listContainer > section {
+    margin: 0 !important;
+  }
+  .transformHeader > nav {
+    padding: 0.5rem 1rem !important;
+  }
+}
+
+@media (min-width: 960px) {
 }

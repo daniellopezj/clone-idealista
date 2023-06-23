@@ -16,6 +16,7 @@ const Floor = ({ floor, className }: FloorProps) => {
       <section className={localStyle.cardCarouselContainer}>
         <BaseCarousel
           className={localStyle.cardCarousel}
+          itemImageClassName={localStyle.itemImage}
           images={floor.multimedia.images}
           carouselWidth={'100%'}
         />
