@@ -8,12 +8,11 @@ import axios, { CancelTokenSource } from 'axios';
 
 let cancelTokenSource: CancelTokenSource | null = null;
 export const backend = () => {
-  const BASE_URL = process.env.PUBLIC_API_BASE_URL;
+  const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
   const headers = {
-    'X-RapidAPI-Key': process.env.PUBLIC_API_KEY,
-    'X-RapidAPI-Host': process.env.PUBLIC_API_HOST,
+    'X-RapidAPI-Key': process.env.NEXT_PUBLIC_API_KEY,
+    'X-RapidAPI-Host': process.env.NEXT_PUBLIC_API_HOST,
   };
-
   async function apiSearch(query: string): Promise<SearchResult[]> {
     if (cancelTokenSource) {
       cancelTokenSource.cancel('Previous request cancelled due to new request');
