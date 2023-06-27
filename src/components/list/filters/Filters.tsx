@@ -20,14 +20,6 @@ interface FiltersProps {
 }
 
 const Filters = ({ className, filters, handleFilter }: FiltersProps) => {
-  const [selectedOption, setSelectedOption] = useState('');
-
-  const options = [
-    { value: 'option1', label: 'Option 1' },
-    { value: 'option2', label: 'Option 2' },
-    { value: 'option3', label: 'Option 3' },
-  ];
-
   const handleChange = (event: SelectChangeEvent) => {
     const { name, value } = event.target;
     const updatedObject = { ...filters, [name]: value };

@@ -13,7 +13,6 @@ import BaseLoading from '@/components/common/base/loading/BaseLoading';
 const List = () => {
   const router = useRouter();
   const { locationId, locationName } = router.query;
-  const [page, setPage] = React.useState(1);
   const [loading, setLoading] = useState(true);
   const [resultRequest, setResultRequest] = useState<ResponseListFloor | null>({
     elementList: [
@@ -771,11 +770,11 @@ const List = () => {
     maxItems: 100,
     locale: 'es',
     sort: 'asc',
-    propertyType: '',
-    minPrice: '',
-    maxPrice: '',
-    minSize: '',
-    maxSize: '',
+    propertyType: 'homes',
+    minPrice: 'Min',
+    maxPrice: 'Max',
+    minSize: 'Min',
+    maxSize: 'Max',
     garage: false,
     airConditioning: false,
     elevator: false,
@@ -785,12 +784,12 @@ const List = () => {
     petsPolicy: '',
   } as FiltersPlaces);
 
-  setTimeout(() => {
-    console.log('hola')
-    // setLoading(false)
-  }, 10000);
   const fetchData = useMemo(
     () => async () => {
+      setLoading(true);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
       console.log('memo'); //request to listFloor
     },
     [params],
@@ -817,7 +816,11 @@ const List = () => {
   ];
 
   const onchangePage = (event: React.ChangeEvent<unknown>, value: number) => {
-    setPage(value);
+    setParams({ ...params, numPage: value });
+  };
+
+  const handleSelectOperation = (event: any) => {
+    setParams({ ...params, operation: event.target.value });
   };
 
   return (
@@ -852,7 +855,9 @@ const List = () => {
         <div className={localStyles.containerRadios}>
           {optionsRent.map((option) => (
             <label
-              className={`${localStyles.customLabels} ${localStyles.selectLabel}`}
+              className={`${localStyles.customLabels} ${
+                params.operation === option.value ? localStyles.selectLabel : ''
+              }`}
               key={option.id}
               htmlFor={option.value}
             >
@@ -861,6 +866,8 @@ const List = () => {
                 id={option.value}
                 type="radio"
                 value={option.value}
+                checked={params.operation === option.value}
+                onChange={(handleSelectOperation)}
               />
               {option.text}
             </label>
@@ -874,7 +881,7 @@ const List = () => {
             />
             <Pagination
               className={localStyles.paginatorContainer}
-              page={page}
+              page={params.numPage}
               color="primary"
               variant="outlined"
               shape="rounded"
