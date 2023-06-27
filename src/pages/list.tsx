@@ -8,11 +8,13 @@ import { FiltersPlaces, ResponseListFloor } from '@/types/Places.types';
 import Pagination from '@mui/material/Pagination';
 import Button from '@mui/material/Button';
 import ChatIcon from '@mui/icons-material/Chat';
+import BaseLoading from '@/components/common/base/loading/BaseLoading';
 
 const List = () => {
   const router = useRouter();
   const { locationId, locationName } = router.query;
   const [page, setPage] = React.useState(1);
+  const [loading, setLoading] = useState(true);
   const [resultRequest, setResultRequest] = useState<ResponseListFloor | null>({
     elementList: [
       {
@@ -783,6 +785,10 @@ const List = () => {
     petsPolicy: '',
   } as FiltersPlaces);
 
+  setTimeout(() => {
+    console.log('hola')
+    // setLoading(false)
+  }, 10000);
   const fetchData = useMemo(
     () => async () => {
       console.log('memo'); //request to listFloor
@@ -816,6 +822,7 @@ const List = () => {
 
   return (
     <LayoutList>
+      <BaseLoading loading={loading}></BaseLoading>
       <div className={localStyles.listHeader}>
         <h1 className={localStyles.listNumberPlaces}>
           21.563 casas y pisos en alquiler en Madrid
