@@ -19,27 +19,31 @@ const BaseCarousel = ({
   carouselWidth = '300px',
 }: BaseCarouselProps) => {
   return (
-    <Carousel
-      className={`${localStyle.itemCarousel} ${className} `}
-      width={carouselWidth}
-      dynamicHeight={true}
-      animationHandler={'slide'}
-      showThumbs={false}
-      showIndicators={false}
-      preventMovementUntilSwipeScrollTolerance={true}
-      swipeScrollTolerance={50}
-    >
-      {images.map((image, i) => (
-        <Image
-          key={`image${i}`}
-          className={itemImageClassName}
-          alt="Floor image"
-          src={image.url}
-          width={600}
-          height={200}
-        />
-      ))}
-    </Carousel>
+    <>
+      {images.length && (
+        <Carousel
+          className={`${localStyle.itemCarousel} ${className} `}
+          width={carouselWidth}
+          dynamicHeight={true}
+          animationHandler={'slide'}
+          showThumbs={false}
+          showIndicators={false}
+          preventMovementUntilSwipeScrollTolerance={true}
+          swipeScrollTolerance={50}
+        >
+          {images.map((image, i) => (
+            <Image
+              key={`image${i}`}
+              className={itemImageClassName}
+              alt="Floor image"
+              src={image.url}
+              width={600}
+              height={200}
+            />
+          ))}
+        </Carousel>
+      )}
+    </>
   );
 };
 

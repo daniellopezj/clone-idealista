@@ -6,6 +6,7 @@ import PlaceItem from '../placeItem/PlaceItem';
 import { SearchResult } from '@/types/Places.types';
 import { backend } from '@/api/backend';
 import { useRouter } from 'next/router';
+import { Button } from '@mui/material';
 
 const Search = () => {
   const { apiSearch } = backend();
@@ -25,6 +26,7 @@ const Search = () => {
   ];
 
   const [query, setQuery] = useState('');
+  const [loading, setLoading] = useState(false);
   const [selectTypeService, setSelectTypeService] = useState('rent');
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [showList, setShowList] = useState<boolean>(false);
@@ -34,6 +36,7 @@ const Search = () => {
   const handleSelectType = (event: any) => {
     setSelectTypeService(event.target.value);
   };
+
   const handleQueryChange = async (event: any) => {
     setQuery(event.target.value);
     if (!event.target.value) {
@@ -55,6 +58,7 @@ const Search = () => {
   }, [query]);
 
   const search = () => {
+    setLoading(true)
     if (!placeSelected) {
       setInputError(true);
       return;
@@ -63,6 +67,7 @@ const Search = () => {
     const queryParams = {
       locationId: placeSelected.locationId,
       locationName: placeSelected.name,
+      operation: selectTypeService,
     };
     router.push({
       pathname: '/list',
@@ -141,8 +146,12 @@ const Search = () => {
               </ul>
             )}
           </div>
-          <button className={localStyles.customButton} onClick={() => search()}>
-            Buscar
+          <button
+            disabled={loading}
+            className={localStyles.customButton}
+            onClick={() => search()}
+          >
+            {loading ? 'Buscando' : 'Buscar'}
           </button>
         </div>
       </div>

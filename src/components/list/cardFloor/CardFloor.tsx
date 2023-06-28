@@ -20,7 +20,7 @@ const CardFloor = ({ floor }: CardFloorProps) => {
           className={localStyle.cardCarousel}
           itemImageClassName={localStyle.imageItem}
           carouselWidth="100%"
-          images={floor.multimedia.images}
+          images={floor.multimedia?.images || []}
         />
       </div>
       <div className={localStyle.cardBody}>
@@ -33,7 +33,7 @@ const CardFloor = ({ floor }: CardFloorProps) => {
             <span> €/mes</span>
           </div>
           <div className={localStyle.bodyFeatures}>
-            <span> {floor.rooms} Hab</span>
+            {floor.rooms > 0 && <span> {floor.rooms} Hab</span>}
             <span> {floor.size} m²</span>
             <span> Planta {floor.floor}ª </span>
             {floor.hasLift && <span> Incluye ascensor</span>}

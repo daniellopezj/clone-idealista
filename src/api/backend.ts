@@ -46,8 +46,7 @@ export const backend = () => {
       headers: headers,
       params: params,
     });
-
-    if (res.status < 400) {
+    if (res.data.elementList) {
       return res.data as ResponseListFloor;
     }
     throw new Error('Request failed');
