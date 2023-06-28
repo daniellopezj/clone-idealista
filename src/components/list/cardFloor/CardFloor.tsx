@@ -8,14 +8,23 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import CommentIcon from '@mui/icons-material/Comment';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import { useRouter } from 'next/router';
 interface CardFloorProps {
   floor: Floor;
 }
 
 const CardFloor = ({ floor }: CardFloorProps) => {
+  const router = useRouter();
+
+  const goToDetails = () => {
+    router.push({
+      pathname: `/details/${floor.propertyCode}`,
+    });
+  };
+
   return (
-    <li className={localStyle.cardContainer}>
-      <div className={localStyle.cardCarouselContainer}>
+    <li  className={localStyle.cardContainer}>
+      <div  className={localStyle.cardCarouselContainer}>
         <BaseCarousel
           className={localStyle.cardCarousel}
           itemImageClassName={localStyle.imageItem}
@@ -24,7 +33,7 @@ const CardFloor = ({ floor }: CardFloorProps) => {
         />
       </div>
       <div className={localStyle.cardBody}>
-        <div className={localStyle.cardBodyContent}>
+        <div onClick={() => goToDetails()} className={localStyle.cardBodyContent}>
           <span className={localStyle.bodyTitle}>
             {floor.suggestedTexts.title}
           </span>

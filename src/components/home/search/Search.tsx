@@ -6,7 +6,6 @@ import PlaceItem from '../placeItem/PlaceItem';
 import { SearchResult } from '@/types/Places.types';
 import { backend } from '@/api/backend';
 import { useRouter } from 'next/router';
-import { Button } from '@mui/material';
 
 const Search = () => {
   const { apiSearch } = backend();

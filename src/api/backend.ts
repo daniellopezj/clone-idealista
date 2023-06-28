@@ -1,4 +1,5 @@
 import {
+  DetailsFloor,
   FiltersPlaces,
   ResponseListFloor,
   ResponsePlaces,
@@ -52,8 +53,28 @@ export const backend = () => {
     throw new Error('Request failed');
   }
 
+  async function apiDetailsFloor(
+    code: string = '',
+  ): Promise<DetailsFloor> {
+
+    try {
+      const res = await axios.get(`${BASE_URL}/properties/detail`, {
+        headers: headers,
+        params: {
+          propertyCode: code,
+          country: 'es',
+          language: 'es'
+        },
+      });
+      return res.data as DetailsFloor;
+    } catch (error) {
+      throw new Error('Request failed');
+    }
+  }
+
   return {
     apiListFloors,
     apiSearch,
+    apiDetailsFloor
   };
 };

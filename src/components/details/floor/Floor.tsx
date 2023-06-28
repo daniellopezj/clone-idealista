@@ -17,7 +17,7 @@ const Floor = ({ floor, className }: FloorProps) => {
         <BaseCarousel
           className={localStyle.cardCarousel}
           itemImageClassName={localStyle.itemImage}
-          images={floor.multimedia.images}
+          images={floor.multimedia?.images || [] }
           carouselWidth={'100%'}
         />
       </section>
@@ -33,7 +33,7 @@ const Floor = ({ floor, className }: FloorProps) => {
         </div>
         <div className={localStyle.floorSize}>
           <span> {floor.size} m²</span>
-          {floor.moreCharacteristics.roomNumber && (
+          {floor.moreCharacteristics.roomNumber > 0 && (
             <span>{floor.moreCharacteristics.roomNumber} hab. </span>
           )}
           <span> {floor.translatedTexts?.layoutDescription} </span>

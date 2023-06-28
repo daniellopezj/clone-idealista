@@ -1,5 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-
+import React, { useState } from 'react';
 import { backend } from '@/api/backend';
 import LayoutList from '@/layout/LayoutList';
 import Filters from '@/components/list/filters/Filters';
@@ -48,10 +47,8 @@ const List = () => {
       setLoading(true);
       try {
         const res = await apiListFloors(params);
-        console.log(res);
         setResultRequest(res);
         setLoading(false);
-        console.log('fetching data');
       } catch (error) {
         setLoading(false);
         console.log('error', error);
