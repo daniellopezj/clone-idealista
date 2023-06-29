@@ -6,7 +6,6 @@ import PlaceItem from '../placeItem/PlaceItem';
 import { SearchResult } from '@/types/Places.types';
 import { backend } from '@/api/backend';
 import { useRouter } from 'next/router';
-import useLegacyEffect from '@/composables/useLegacyEffect';
 
 const Search = () => {
   const { apiSearch } = backend();
@@ -47,7 +46,7 @@ const Search = () => {
     setInputError(false);
   };
 
-  useLegacyEffect(() => {
+  useEffect(() => {
     const getData = async () => {
       if (query.length > 2 && query.length < 9) {
         let res = await apiSearch(query);
@@ -59,7 +58,6 @@ const Search = () => {
   }, [query]);
 
   useEffect(() => {
-    console.log(inputElement.current)
     if (inputElement.current) {
       inputElement.current?.addEventListener('focusin', handleFocusIn);
     }
@@ -67,7 +65,6 @@ const Search = () => {
 
   function handleFocusIn() {
     if (window.matchMedia('(max-width: 599px)').matches) {
-      console.log(inputElement.current);
       inputElement.current?.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
@@ -94,7 +91,7 @@ const Search = () => {
     });
   };
 
-  useLegacyEffect(() => {
+  useEffect(() => {
     if (placeSelected) {
       search();
     }

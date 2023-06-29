@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { backend } from '@/api/backend';
 import LayoutList from '@/layout/LayoutList';
 import Filters from '@/components/list/filters/Filters';
@@ -10,7 +10,6 @@ import Pagination from '@mui/material/Pagination';
 import Button from '@mui/material/Button';
 import ChatIcon from '@mui/icons-material/Chat';
 import BaseLoading from '@/components/common/base/loading/BaseLoading';
-import useLegacyEffect from '@/composables/useLegacyEffect';
 
 const List = () => {
   const [resultRequest, setResultRequest] = useState<ResponseListFloor | null>(
@@ -20,6 +19,7 @@ const List = () => {
   const router = useRouter();
   const { locationId, locationName, operation } = router.query;
   const [loading, setLoading] = useState(true);
+  const initialized = useRef(false)
   const [params, setParams] = useState({
     country: 'es',
     // locationId: '0-EU-ES-28-07-sadasd001-079',
@@ -44,18 +44,22 @@ const List = () => {
     petsPolicy: '',
   } as FiltersPlaces);
 
-  useLegacyEffect(() => {
-    const fetchData = async () => {
-      setLoading(true);
-      try {
-        const res = await apiListFloors(params);
-        setResultRequest(res);
-        setLoading(false);
-      } catch (error) {
-        router.push('/');
-      }
-    };
-    fetchData();
+  useEffect(() => {
+    if(!initialized.current){
+      initialized.current = true
+      const fetchData = async () => {
+        console.log('hola')
+        setLoading(true);
+        try {
+          const res = await apiListFloors(params);
+          setResultRequest(res);
+          setLoading(false);
+        } catch (error) {
+          router.push('/');
+        }
+      };
+      fetchData();
+    }
   }, [params]);
 
   const handleFilter = (newParams: FiltersPlaces) => {
