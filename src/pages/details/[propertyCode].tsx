@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import LayoutDetails from '@/layout/LayoutDetails';
 import localStyle from '@/components/details/Details.module.scss';
 import { DetailsFloor } from '@/types/Places.types';
