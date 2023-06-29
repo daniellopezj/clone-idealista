@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import localStyles from '@/components/home/search/Search.module.scss';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,6 +6,7 @@ import PlaceItem from '../placeItem/PlaceItem';
 import { SearchResult } from '@/types/Places.types';
 import { backend } from '@/api/backend';
 import { useRouter } from 'next/router';
+import useLegacyEffect from '@/composables/useLegacyEffect';
 
 const Search = () => {
   const { apiSearch } = backend();
@@ -24,6 +25,7 @@ const Search = () => {
     },
   ];
 
+  const inputElement = useRef<HTMLInputElement | null>(null);
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
   const [selectTypeService, setSelectTypeService] = useState('rent');
@@ -45,7 +47,7 @@ const Search = () => {
     setInputError(false);
   };
 
-  useEffect(() => {
+  useLegacyEffect(() => {
     const getData = async () => {
       if (query.length > 2 && query.length < 9) {
         let res = await apiSearch(query);
@@ -56,10 +58,28 @@ const Search = () => {
     getData();
   }, [query]);
 
+  useEffect(() => {
+    console.log(inputElement.current)
+    if (inputElement.current) {
+      inputElement.current?.addEventListener('focusin', handleFocusIn);
+    }
+  }, []);
+
+  function handleFocusIn() {
+    if (window.matchMedia('(max-width: 599px)').matches) {
+      console.log(inputElement.current);
+      inputElement.current?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }
+
   const search = () => {
     setLoading(true);
     if (!placeSelected) {
       setInputError(true);
+      setLoading(false);
       return;
     }
     setQuery(placeSelected.name);
@@ -74,7 +94,7 @@ const Search = () => {
     });
   };
 
-  useEffect(() => {
+  useLegacyEffect(() => {
     if (placeSelected) {
       search();
     }
@@ -117,6 +137,7 @@ const Search = () => {
               className={`${localStyles.customInputSearch} ${
                 inputError ? localStyles.inputError : ''
               }`}
+              ref={inputElement}
               type="text"
               placeholder="Escribe dónde buscas"
               value={query}
