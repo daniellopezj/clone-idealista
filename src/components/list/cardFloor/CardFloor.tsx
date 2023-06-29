@@ -8,11 +8,20 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import CommentIcon from '@mui/icons-material/Comment';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import { useRouter } from 'next/router';
 interface CardFloorProps {
   floor: Floor;
 }
 
 const CardFloor = ({ floor }: CardFloorProps) => {
+  const router = useRouter();
+
+  const goToDetails = () => {
+    router.push({
+      pathname: `/details/${floor.propertyCode}`,
+    });
+  };
+
   return (
     <li className={localStyle.cardContainer}>
       <div className={localStyle.cardCarouselContainer}>
@@ -20,11 +29,14 @@ const CardFloor = ({ floor }: CardFloorProps) => {
           className={localStyle.cardCarousel}
           itemImageClassName={localStyle.imageItem}
           carouselWidth="100%"
-          images={floor.multimedia.images}
+          images={floor.multimedia?.images || []}
         />
       </div>
       <div className={localStyle.cardBody}>
-        <div className={localStyle.cardBodyContent}>
+        <div
+          onClick={() => goToDetails()}
+          className={localStyle.cardBodyContent}
+        >
           <span className={localStyle.bodyTitle}>
             {floor.suggestedTexts.title}
           </span>
@@ -33,7 +45,7 @@ const CardFloor = ({ floor }: CardFloorProps) => {
             <span> €/mes</span>
           </div>
           <div className={localStyle.bodyFeatures}>
-            <span> {floor.rooms} Hab</span>
+            {floor.rooms > 0 && <span> {floor.rooms} Hab</span>}
             <span> {floor.size} m²</span>
             <span> Planta {floor.floor}ª </span>
             {floor.hasLift && <span> Incluye ascensor</span>}

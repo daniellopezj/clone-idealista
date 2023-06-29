@@ -1,31 +1,31 @@
 import {
+  DetailsFloor,
   FiltersPlaces,
   ResponseListFloor,
   ResponsePlaces,
   SearchResult,
 } from '@/types/Places.types';
-import axios, { CancelTokenSource } from 'axios';
+import axios from 'axios';
 
-let cancelTokenSource: CancelTokenSource | null = null;
+let abortController: AbortController | null = null;
 export const backend = () => {
   const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
   const headers = {
     'X-RapidAPI-Key': process.env.NEXT_PUBLIC_API_KEY,
     'X-RapidAPI-Host': process.env.NEXT_PUBLIC_API_HOST,
   };
+
   async function apiSearch(query: string): Promise<SearchResult[]> {
-    if (cancelTokenSource) {
-      cancelTokenSource.cancel('Previous request cancelled due to new request');
+    if (abortController) {
+      abortController.abort();
     }
-    cancelTokenSource = axios.CancelToken.source();
+    abortController = new AbortController();
     try {
-
-
       const res = await axios.get(
         `${BASE_URL}/auto-complete?prefix=${query}&country=es`,
         {
           headers: headers,
-          cancelToken: cancelTokenSource.token
+          signal: abortController.signal,
         },
       );
       if (res.status < 400) {
@@ -47,15 +47,31 @@ export const backend = () => {
       headers: headers,
       params: params,
     });
-
-    if (res.status < 400) {
+    if (res.data.elementList) {
       return res.data as ResponseListFloor;
     }
     throw new Error('Request failed');
   }
 
+  async function apiDetailsFloor(code: string = ''): Promise<DetailsFloor> {
+    try {
+      const res = await axios.get(`${BASE_URL}/properties/detail`, {
+        headers: headers,
+        params: {
+          propertyCode: code,
+          country: 'es',
+          language: 'es',
+        },
+      });
+      return res.data as DetailsFloor;
+    } catch (error) {
+      throw new Error('Request failed');
+    }
+  }
+
   return {
     apiListFloors,
     apiSearch,
+    apiDetailsFloor,
   };
 };

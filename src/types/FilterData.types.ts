@@ -81,14 +81,14 @@ export const minPrice: SelectOption[] = [
     value: '1500',
   },
   {
-    label: 'Sin limite',
+    label: 'Sin Limite',
     value: 'Max',
   },
 ];
 export const maxPrice: SelectOption[] = [
   {
-    label: 'Máx',
-    value: 'Min',
+    label: 'Max',
+    value: 'Max',
   },
   {
     label: '200',
@@ -131,8 +131,8 @@ export const maxPrice: SelectOption[] = [
     value: '3000',
   },
   {
-    label: 'Sin limite',
-    value: 'Max',
+    label: 'Sin Limite',
+    value: 'Empty',
   },
 ];
 export const minSize: SelectOption[] = [
@@ -183,8 +183,8 @@ export const minSize: SelectOption[] = [
 ];
 export const maxSize: SelectOption[] = [
   {
-    label: 'Min',
-    value: 'Min',
+    label: 'Max',
+    value: 'Max',
   },
   {
     label: '40 m²',
@@ -230,6 +230,6 @@ export const maxSize: SelectOption[] = [
 
   {
     label: 'Sin limite',
-    value: 'Max',
+    value: 'Empty',
   },
 ];

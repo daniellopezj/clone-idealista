@@ -40,7 +40,7 @@ export interface ImagesCarousel {
 }
 
 export interface FloorMultimedia {
-  images: ImagesCarousel[];
+  images?: ImagesCarousel[];
 }
 
 export interface FloorContact {
@@ -176,7 +176,9 @@ export interface ResponseListFloor {
   numPaginations: number;
   hiddenResults: boolean;
   summary: any;
-  filter: any;
+  filter: {
+    locationName: string;
+  };
   alertName: string;
   lowerRangePosition: number;
   upperRangePosition: number;

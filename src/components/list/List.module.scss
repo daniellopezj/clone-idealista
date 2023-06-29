@@ -1,6 +1,6 @@
 .listContainer {
   display: grid;
-  grid-template-columns: 1fr 22rem 76rem 1fr;
+  grid-template-columns: 1fr 18% 65% 1fr;
   grid-row-gap: 1.5rem;
   grid-column-gap: 1.5rem;
   background-color: #f4f5f2;
@@ -48,7 +48,7 @@
 .customLabels {
   cursor: pointer;
   background-color: #fff;
-  border: solid 0.0625rem #cbccc7;
+  border: none;
   color: #666664;
   font-size: 1.1rem;
   font-weight: 700;

@@ -92,6 +92,11 @@
   font-weight: 700;
   border: none;
 }
+.customButton:disabled {
+  cursor: pointer;
+  background-color: gray;
+  color: black;
+}
 
 .containerList {
   background-color: white;
