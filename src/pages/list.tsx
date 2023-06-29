@@ -13,7 +13,9 @@ import BaseLoading from '@/components/common/base/loading/BaseLoading';
 import useLegacyEffect from '@/composables/useLegacyEffect';
 
 const List = () => {
-  const [resultRequest, setResultRequest] = useState<ResponseListFloor | null>(null);
+  const [resultRequest, setResultRequest] = useState<ResponseListFloor | null>(
+    null,
+  );
   const { apiListFloors } = backend();
   const router = useRouter();
   const { locationId, locationName, operation } = router.query;
@@ -50,9 +52,8 @@ const List = () => {
         setResultRequest(res);
         setLoading(false);
       } catch (error) {
-        router.push('/')
+        router.push('/');
       }
-
     };
     fetchData();
   }, [params]);

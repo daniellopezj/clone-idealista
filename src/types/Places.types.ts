@@ -177,7 +177,7 @@ export interface ResponseListFloor {
   hiddenResults: boolean;
   summary: any;
   filter: {
-    locationName: string
+    locationName: string;
   };
   alertName: string;
   lowerRangePosition: number;

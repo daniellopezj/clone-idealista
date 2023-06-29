@@ -23,8 +23,8 @@ const CardFloor = ({ floor }: CardFloorProps) => {
   };
 
   return (
-    <li  className={localStyle.cardContainer}>
-      <div  className={localStyle.cardCarouselContainer}>
+    <li className={localStyle.cardContainer}>
+      <div className={localStyle.cardCarouselContainer}>
         <BaseCarousel
           className={localStyle.cardCarousel}
           itemImageClassName={localStyle.imageItem}
@@ -33,7 +33,10 @@ const CardFloor = ({ floor }: CardFloorProps) => {
         />
       </div>
       <div className={localStyle.cardBody}>
-        <div onClick={() => goToDetails()} className={localStyle.cardBodyContent}>
+        <div
+          onClick={() => goToDetails()}
+          className={localStyle.cardBodyContent}
+        >
           <span className={localStyle.bodyTitle}>
             {floor.suggestedTexts.title}
           </span>

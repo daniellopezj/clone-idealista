@@ -25,7 +25,7 @@ export const backend = () => {
         `${BASE_URL}/auto-complete?prefix=${query}&country=es`,
         {
           headers: headers,
-          signal: abortController.signal
+          signal: abortController.signal,
         },
       );
       if (res.status < 400) {
@@ -53,17 +53,14 @@ export const backend = () => {
     throw new Error('Request failed');
   }
 
-  async function apiDetailsFloor(
-    code: string = '',
-  ): Promise<DetailsFloor> {
-
+  async function apiDetailsFloor(code: string = ''): Promise<DetailsFloor> {
     try {
       const res = await axios.get(`${BASE_URL}/properties/detail`, {
         headers: headers,
         params: {
           propertyCode: code,
           country: 'es',
-          language: 'es'
+          language: 'es',
         },
       });
       return res.data as DetailsFloor;
@@ -75,6 +72,6 @@ export const backend = () => {
   return {
     apiListFloors,
     apiSearch,
-    apiDetailsFloor
+    apiDetailsFloor,
   };
 };

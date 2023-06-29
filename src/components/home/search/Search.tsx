@@ -57,7 +57,7 @@ const Search = () => {
   }, [query]);
 
   const search = () => {
-    setLoading(true)
+    setLoading(true);
     if (!placeSelected) {
       setInputError(true);
       return;
