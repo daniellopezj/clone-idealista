@@ -22,11 +22,17 @@ const NofFoundPage = () => {
         </section>
         <div className={localStyles.body}>
           <span>Esto puede haber ocurrido porque:</span>
-          <li>Te has confundido al escribir el teléfono o el código de anuncio. No te preocupes, pasa a menudo ;-)</li>
-          <li>Has llegado desde un enlace antiguo que hoy no corresponde a ningún anuncio.</li>
+          <li>
+            Te has confundido al escribir el teléfono o el código de anuncio. No
+            te preocupes, pasa a menudo ;-)
+          </li>
+          <li>
+            Has llegado desde un enlace antiguo que hoy no corresponde a ningún
+            anuncio.
+          </li>
           <Link className={localStyles.link} href="/">
-          Prueba a buscar lo que quieres desde la página de inicio
-        </Link>
+            Prueba a buscar lo que quieres desde la página de inicio
+          </Link>
         </div>
       </main>
       <Footer className={localStyles.footerContainer} />

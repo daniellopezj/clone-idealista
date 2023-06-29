@@ -19,7 +19,7 @@ const List = () => {
   const router = useRouter();
   const { locationId, locationName, operation } = router.query;
   const [loading, setLoading] = useState(true);
-  const initialized = useRef(false)
+  const initialized = useRef(false);
   const [params, setParams] = useState({
     country: 'es',
     // locationId: '0-EU-ES-28-07-sadasd001-079',
@@ -45,10 +45,10 @@ const List = () => {
   } as FiltersPlaces);
 
   useEffect(() => {
-    if(!initialized.current){
-      initialized.current = true
+    if (!initialized.current) {
+      initialized.current = true;
       const fetchData = async () => {
-        console.log('hola')
+        console.log('hola');
         setLoading(true);
         try {
           const res = await apiListFloors(params);
