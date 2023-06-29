@@ -50,8 +50,7 @@ const List = () => {
         setResultRequest(res);
         setLoading(false);
       } catch (error) {
-        setLoading(false);
-        console.log('error', error);
+        router.push('/')
       }
 
     };

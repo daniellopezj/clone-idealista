@@ -13,6 +13,7 @@ export default function Details() {
   const [floor, setFloor] = useState<DetailsFloor | null>(null);
   const { apiDetailsFloor } = backend();
   const router = useRouter();
+  
 
   useLegacyEffect(() => {
     const fetchData = async () => {
@@ -21,7 +22,7 @@ export default function Details() {
           const res = await apiDetailsFloor(router.query.propertyCode as string);
           setFloor(res);
         } catch (error) {
-          console.log('error details', error);
+          router.push('/')
         }
       }
     };
