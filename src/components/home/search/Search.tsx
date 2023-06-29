@@ -59,7 +59,7 @@ const Search = () => {
 
   useEffect(() => {
     if (inputElement.current) {
-      inputElement.current?.addEventListener('focusin', handleFocusIn);
+      inputElement.current?.addEventListener('focus', handleFocusIn);
     }
   }, []);
 
