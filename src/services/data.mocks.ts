@@ -7,7 +7,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 export const cardsHome: CardInfo[] = [
   {
     id: 0,
-    srcImage: '/agencies.jpg',
+    srcImage: '/agencies.webp',
     title:
       'Te recomendamos las agencias inmobiliarias más adecuadas para vender tu casa',
     description:
@@ -17,7 +17,7 @@ export const cardsHome: CardInfo[] = [
   },
   {
     id: 1,
-    srcImage: '/comunication.jpg',
+    srcImage: '/comunication.webp',
     title: 'Lleva idealista siempre contigo',
     description:
       'Con nuestra app serás el primero en enterarte de nuevos inmuebles, cambios en tus favoritos y mensajes del chat.',
@@ -26,7 +26,7 @@ export const cardsHome: CardInfo[] = [
   },
   {
     id: 2,
-    srcImage: '/knowDetails.jpg',
+    srcImage: '/knowDetails.webp',
     title: 'Conocer los detalles de cualquier inmueble',
     description:
       'Las características, histórico, precios estimados y datos de cada uno los inmuebles de España de forma gratuita.',
@@ -35,7 +35,7 @@ export const cardsHome: CardInfo[] = [
   },
   {
     id: 3,
-    srcImage: '/rent.jpg',
+    srcImage: '/rent.webp',
     title:
       '  Casas rurales en España, Italia y Portugal para resguardarse del frio',
     description:
