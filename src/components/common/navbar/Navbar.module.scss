@@ -11,6 +11,21 @@
   position: relative;
 }
 
+.customButton{
+  border-radius: 50px !important;
+  border-color: rgb(197, 197, 197) !important ;
+  font-size: 1rem !important;
+  padding: 1px 25px !important;
+  color: rgb(74, 74, 74) !important;
+  text-transform: capitalize !important;
+}
+
+.customButton:hover{
+  color: #B62682 !important;
+  border-color:  #B62682 !important;
+  background-color: white !important;
+}
+
 @media (max-width: 599px) {
   .main {
     padding: 0.5rem;

@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import localStyles from '@/components/common/footer/Footer.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { socialIcons } from '@/services/data.mocks';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import { Icon } from '@mui/material';
 
 const Footer = ({ className }: any) => {
   const [ishover, sethover] = useState(-1);
@@ -44,6 +41,7 @@ const Footer = ({ className }: any) => {
                   <Link
                     key={social.id}
                     href={social.link}
+                    target="_blank"
                     onMouseOver={() => MouseOver(social.id)}
                     onMouseOut={() => MouseOut()}
                     className={localStyles.footerSocialLink}

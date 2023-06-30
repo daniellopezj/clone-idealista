@@ -61,7 +61,7 @@ export const socialIcons: SocialIcon[] = [
   {
     id: 2,
     icon: TwitterIcon,
-    link: 'https://twitter.com/daniellopezj01',
+    link: 'https://twitter.com/ldanidev',
     color: '#00ACEE',
   },
 ];
