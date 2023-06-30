@@ -1,9 +1,8 @@
 import { CardInfo, SocialIcon } from '@/types/general.types';
-import {
-  faLinkedinIn,
-  faGithub,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons';
+
+import TwitterIcon from '@mui/icons-material/Twitter';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export const cardsHome: CardInfo[] = [
   {
@@ -49,19 +48,19 @@ export const cardsHome: CardInfo[] = [
 export const socialIcons: SocialIcon[] = [
   {
     id: 0,
-    icon: faLinkedinIn,
+    icon: LinkedInIcon,
     link: 'https://www.linkedin.com/in/dani-dev/',
     color: '#0e76a8',
   },
   {
     id: 1,
-    icon: faGithub,
+    icon: GitHubIcon,
     link: 'https://github.com/ldani-dev',
     color: '#000000',
   },
   {
     id: 2,
-    icon: faTwitter,
+    icon: TwitterIcon,
     link: 'https://twitter.com/daniellopezj01',
     color: '#00ACEE',
   },

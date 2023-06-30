@@ -1,5 +1,4 @@
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-
+import { ComponentType } from 'react';
 export interface CardInfo {
   id: number;
   srcImage: string;
@@ -11,7 +10,7 @@ export interface CardInfo {
 
 export interface SocialIcon {
   id: number;
-  icon: IconDefinition;
+  icon: ComponentType;
   link: string;
   color: string;
 }

@@ -33,9 +33,9 @@ export const backend = () => {
         return results.locations;
       }
     } catch (error) {
-      if (axios.isCancel(error)) {
-        console.log('Request cancelled:', error.message);
-      }
+      // if (axios.isCancel(error)) {
+      //   console.log('Request cancelled:', error.message);
+      // }
     }
     return [];
   }

@@ -48,7 +48,6 @@ const List = () => {
     if (!initialized.current) {
       initialized.current = true;
       const fetchData = async () => {
-        console.log('hola');
         setLoading(true);
         try {
           const res = await apiListFloors(params);
