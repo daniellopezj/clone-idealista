@@ -32,7 +32,6 @@ const Search = () => {
   const [showList, setShowList] = useState<boolean>(false);
   const [inputError, setInputError] = useState<boolean>(false);
   const [placeSelected, setPlaceSelected] = useState<SearchResult | null>(null);
-
   const handleSelectType = (event: any) => {
     setSelectTypeService(event.target.value);
   };
@@ -99,6 +98,7 @@ const Search = () => {
 
   return (
     <div className={localStyles.mainContainerSearch}>
+    
       <div className={localStyles.contentSearch}>
         <div className={localStyles.containerTitle}>
           <h2 className={localStyles.title}>

@@ -10,6 +10,7 @@ import Pagination from '@mui/material/Pagination';
 import Button from '@mui/material/Button';
 import ChatIcon from '@mui/icons-material/Chat';
 import BaseLoading from '@/components/common/base/loading/BaseLoading';
+import BaseSnackBar from '@/components/common/base/snackBar/BaseSnackBar';
 
 const List = () => {
   const [resultRequest, setResultRequest] = useState<ResponseListFloor | null>(
@@ -20,6 +21,7 @@ const List = () => {
   const { locationId, locationName, operation } = router.query;
   const [loading, setLoading] = useState(true);
   const initialized = useRef(false);
+  const [snackbarOpen, setSnackbarOpen] = useState(true);
   const [params, setParams] = useState({
     country: 'es',
     // locationId: '0-EU-ES-28-07-sadasd001-079',
@@ -52,7 +54,7 @@ const List = () => {
         try {
           const res = await apiListFloors(params);
           setResultRequest(res);
-          setLoading(false);
+        setLoading(false);
           initialized.current = false;
         } catch (error) {
           router.push('/');
@@ -78,6 +80,10 @@ const List = () => {
       text: 'Comprar',
     },
   ];
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
+  };
 
   const onchangePage = (event: React.ChangeEvent<unknown>, value: number) => {
     setParams({ ...params, numPage: value });
@@ -111,18 +117,14 @@ const List = () => {
               Contactame!
             </Button>
           </div>
-          {/* {resultRequest && (
+          {resultRequest && (
             <Filters
               handleFilter={handleFilter}
               className=""
               filters={params}
             />
-          )} */}
-            <Filters
-              handleFilter={handleFilter}
-              className=""
-              filters={params}
-            />
+          )}
+          <Filters handleFilter={handleFilter} className="" filters={params} />
         </aside>
         <div className={localStyles.containerRadios}>
           {optionsRent.map((option) => (
@@ -163,6 +165,11 @@ const List = () => {
           </div>
         )}
       </div>
+      <BaseSnackBar
+        message="Error al hacer la busqueda de viviendas"
+        open={snackbarOpen}
+        onClose={handleSnackbarClose}
+      ></BaseSnackBar>
     </LayoutList>
   );
 };
