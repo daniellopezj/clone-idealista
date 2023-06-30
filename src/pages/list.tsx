@@ -53,6 +53,7 @@ const List = () => {
           const res = await apiListFloors(params);
           setResultRequest(res);
           setLoading(false);
+          initialized.current = false;
         } catch (error) {
           router.push('/');
         }
@@ -110,13 +111,18 @@ const List = () => {
               Contactame!
             </Button>
           </div>
-          {resultRequest && (
+          {/* {resultRequest && (
             <Filters
               handleFilter={handleFilter}
               className=""
               filters={params}
             />
-          )}
+          )} */}
+            <Filters
+              handleFilter={handleFilter}
+              className=""
+              filters={params}
+            />
         </aside>
         <div className={localStyles.containerRadios}>
           {optionsRent.map((option) => (

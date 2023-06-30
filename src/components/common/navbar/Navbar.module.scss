@@ -11,7 +11,13 @@
   position: relative;
 }
 
-.customButton{
+.containerButtons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.customButtonContact {
   border-radius: 50px !important;
   border-color: rgb(197, 197, 197) !important ;
   font-size: 1rem !important;
@@ -20,10 +26,21 @@
   text-transform: capitalize !important;
 }
 
-.customButton:hover{
-  color: #B62682 !important;
-  border-color:  #B62682 !important;
+.customButtonContact:hover {
+  color: #b62682 !important;
+  border-color: #b62682 !important;
   background-color: white !important;
+}
+
+.customButtonProfile {
+  text-transform: capitalize !important;
+  color: rgb(74, 74, 74) !important;
+  padding: 5px 10px 0 !important;
+  align-items: initial !important;
+}
+
+.customButtonProfile:hover {
+  background-color: #edfca2 !important;
 }
 
 @media (max-width: 599px) {
@@ -33,6 +50,32 @@
   .logo {
     width: 120px;
     max-width: initial;
+  }
+
+  .containerButtons {
+    display: flex;
+    align-items: center;
+    gap: 1px;
+  }
+  .customButtonContact {
+    font-size: 0.9rem !important;
+    padding: 1px 11px 1px 15px !important;
+  }
+  .customButtonProfile {
+    display: contents !important;
+  }
+  .iconContact{
+    font-size: 1rem !important;
+  }
+  .iconProfile{
+    margin: 5px 10px  !important;
+    font-size: 1.5rem !important;
+  }
+  .customButtonProfile:hover {
+    background-color: #edfca2 !important;
+  }
+  .descriptionProfile {
+    display: none;
   }
 }
 
