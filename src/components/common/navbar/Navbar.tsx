@@ -27,22 +27,26 @@ const Navbar = () => {
             variant="outlined"
             color="primary"
             disableElevation
-            startIcon={<ChatIcon className={localStyles.iconContact} color="primary" />}
+            startIcon={
+              <ChatIcon className={localStyles.iconContact} color="primary" />
+            }
           >
             contactame
           </Button>
         </Link>
         <Link href="https://danidev.me/" target="_blank">
-        <Button
-          disableRipple
-          className={localStyles.customButtonProfile}
-          variant="text"
-          color="primary"
-          disableElevation
-          startIcon={<PersonIcon color="primary" className={localStyles.iconProfile} />}
-        >
-        <span  className={localStyles.descriptionProfile}>  Mi perfil </span>
-        </Button>
+          <Button
+            disableRipple
+            className={localStyles.customButtonProfile}
+            variant="text"
+            color="primary"
+            disableElevation
+            startIcon={
+              <PersonIcon color="primary" className={localStyles.iconProfile} />
+            }
+          >
+            <span className={localStyles.descriptionProfile}> Mi perfil </span>
+          </Button>
         </Link>
       </div>
     </div>

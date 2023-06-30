@@ -54,7 +54,7 @@ const List = () => {
         try {
           const res = await apiListFloors(params);
           setResultRequest(res);
-        setLoading(false);
+          setLoading(false);
           initialized.current = false;
         } catch (error) {
           router.push('/');

@@ -12,7 +12,7 @@ interface ListFloorPros {
 const ListFloor = ({ Floors, className }: ListFloorPros) => {
   return (
     <ul className={`${className} ${localStyle.list}`}>
-      {Floors.filter(item=> item.multimedia?.images).map((floor) => (
+      {Floors.filter((item) => item.multimedia?.images).map((floor) => (
         <CardFloor key={floor.propertyCode} floor={floor} />
       ))}
     </ul>

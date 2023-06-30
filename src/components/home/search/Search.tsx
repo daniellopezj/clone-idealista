@@ -98,7 +98,6 @@ const Search = () => {
 
   return (
     <div className={localStyles.mainContainerSearch}>
-    
       <div className={localStyles.contentSearch}>
         <div className={localStyles.containerTitle}>
           <h2 className={localStyles.title}>

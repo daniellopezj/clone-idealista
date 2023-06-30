@@ -21,31 +21,39 @@ const SimpleNavbar = ({ className }: any) => {
           />
         </Link>
         <div className={localStyles.containerButtons}>
-        <Link href="https://www.linkedin.com/in/dani-dev/" target="_blank">
-          <Button
-            disableRipple
-            className={localStyles.customButtonContact}
-            variant="outlined"
-            color="primary"
-            disableElevation
-            startIcon={<ChatIcon color="primary" />}
-          >
-            contactame
-          </Button>
-        </Link>
-        <Link href="https://danidev.me/" target="_blank">
-        <Button
-          disableRipple
-          className={localStyles.customButtonProfile}
-          variant="text"
-          color="primary"
-          disableElevation
-          startIcon={<PersonIcon color="primary" className={localStyles.iconProfile} />}
-        >
-           <span  className={localStyles.descriptionProfile}>  Mi perfil </span>
-        </Button>
-        </Link>
-      </div>
+          <Link href="https://www.linkedin.com/in/dani-dev/" target="_blank">
+            <Button
+              disableRipple
+              className={localStyles.customButtonContact}
+              variant="outlined"
+              color="primary"
+              disableElevation
+              startIcon={<ChatIcon color="primary" />}
+            >
+              contactame
+            </Button>
+          </Link>
+          <Link href="https://danidev.me/" target="_blank">
+            <Button
+              disableRipple
+              className={localStyles.customButtonProfile}
+              variant="text"
+              color="primary"
+              disableElevation
+              startIcon={
+                <PersonIcon
+                  color="primary"
+                  className={localStyles.iconProfile}
+                />
+              }
+            >
+              <span className={localStyles.descriptionProfile}>
+                {' '}
+                Mi perfil{' '}
+              </span>
+            </Button>
+          </Link>
+        </div>
       </nav>
     </div>
   );
