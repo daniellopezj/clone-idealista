@@ -15,15 +15,18 @@ export default function Details() {
   const initialized = useRef(false);
 
   useEffect(() => {
+    console.log('inside', router.query);
     if (!initialized.current) {
       initialized.current = true;
       const fetchData = async () => {
+        initialized.current = false;
         if (router.query.propertyCode) {
           try {
             const res = await apiDetailsFloor(
               router.query.propertyCode as string,
             );
             setFloor(res);
+            initialized.current = true;
           } catch (error) {
             router.push('/');
           }

@@ -54,11 +54,13 @@
   color: #8e8f8c;
   width: 22px;
   height: 25px;
+  svg {
+    font-size: 1.7rem;
+  }
 }
 
 .footerSocialLink:hover {
   color: black;
-  background-color: white;
 }
 
 .footerLastLine {

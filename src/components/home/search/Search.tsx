@@ -32,7 +32,6 @@ const Search = () => {
   const [showList, setShowList] = useState<boolean>(false);
   const [inputError, setInputError] = useState<boolean>(false);
   const [placeSelected, setPlaceSelected] = useState<SearchResult | null>(null);
-
   const handleSelectType = (event: any) => {
     setSelectTypeService(event.target.value);
   };

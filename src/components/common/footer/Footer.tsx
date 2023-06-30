@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import localStyles from '@/components/common/footer/Footer.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { socialIcons } from '@/services/data.mocks';
 
 const Footer = ({ className }: any) => {
@@ -36,22 +35,27 @@ const Footer = ({ className }: any) => {
           <div className={localStyles.footerSocial}>
             <h1 className={localStyles.footerSocialTitle}>Social</h1>
             <div className={localStyles.footerSocialButtons}>
-              {socialIcons.map((icon) => (
-                <Link
-                  key={icon.id}
-                  href={icon.link}
-                  onMouseOver={() => MouseOver(icon.id)}
-                  onMouseOut={() => MouseOut()}
-                  className={localStyles.footerSocialLink}
-                >
-                  <FontAwesomeIcon
-                    style={{
-                      color: ishover === icon.id ? icon.color : '#8E8F8C',
-                    }}
-                    icon={icon.icon}
-                  ></FontAwesomeIcon>
-                </Link>
-              ))}
+              {socialIcons.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <Link
+                    key={social.id}
+                    href={social.link}
+                    target="_blank"
+                    onMouseOver={() => MouseOver(social.id)}
+                    onMouseOut={() => MouseOut()}
+                    className={localStyles.footerSocialLink}
+                  >
+                    <span
+                      style={{
+                        color: ishover === social.id ? social.color : '#8E8F8C',
+                      }}
+                    >
+                      <Icon />
+                    </span>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </footer>

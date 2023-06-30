@@ -8,7 +8,7 @@ const MainView = () => {
     <div className={localStyles.containerMainView}>
       <Image
         className={localStyles.customImage}
-        src="/home.jpg"
+        src="/home.webp"
         alt="Picture of the author"
         width={1000}
         height={500}
