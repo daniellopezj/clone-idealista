@@ -18,14 +18,16 @@ export const SnackbarContext = createContext<SnackbarContextType>({
   closeSnackbar: () => {},
 });
 
-export const SnackbarProvider: React.FC<SnackbarProviderProps> = ({ children }) => {
+export const SnackbarProvider: React.FC<SnackbarProviderProps> = ({
+  children,
+}) => {
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState('');
 
   const openSnackbar = (message: string) => {
     setOpen(true);
     setMessage(message);
-    console.log(message)
+    console.log(message);
   };
 
   const closeSnackbar = () => {

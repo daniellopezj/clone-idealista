@@ -20,7 +20,7 @@ const List = () => {
   const { apiListFloors } = backend();
   const { openSnackbar } = useContext(SnackbarContext);
   const router = useRouter();
-  const { locationId , locationName, operation } = router.query;
+  const { locationId, locationName, operation } = router.query;
   const [loading, setLoading] = useState(true);
   const initialized = useRef(false);
   const [params, setParams] = useState({
@@ -28,7 +28,7 @@ const List = () => {
     // locationId: '0-EU-ES-28-07-sadasd001-079',
     locationId: '0-EU-ES-28-07-001-079',
     locationName: 'Madrid, Madrid',
-    operation:  'rent',
+    operation: 'rent',
     numPage: 1,
     maxItems: 25,
     locale: 'es',
@@ -51,9 +51,9 @@ const List = () => {
     if (router.isReady) {
       setParams({
         ...params,
-        locationId: locationId as string || params.locationId,
-        locationName: locationName as string || params.locationName,
-        operation: operation as "rent" | "sale" || params.operation,
+        locationId: (locationId as string) || params.locationId,
+        locationName: (locationName as string) || params.locationName,
+        operation: (operation as 'rent' | 'sale') || params.operation,
       });
     }
   }, [router.isReady]);
@@ -69,7 +69,9 @@ const List = () => {
           setLoading(false);
           initialized.current = false;
         } catch (error) {
-          openSnackbar('se ha generado un error, ya se ha notificado al administrador');
+          openSnackbar(
+            'se ha generado un error, ya se ha notificado al administrador',
+          );
           router.push('/');
         }
       };

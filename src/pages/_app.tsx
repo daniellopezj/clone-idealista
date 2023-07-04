@@ -8,7 +8,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider, EmotionCache } from '@emotion/react';
 import Theme from '@/plugins/material/Theme';
 import CreateEmotionCache from '@/plugins/material/CreateEmotionCache';
-import { SnackbarContext,SnackbarProvider } from '@/context/Snackbar.context';
+import { SnackbarContext, SnackbarProvider } from '@/context/Snackbar.context';
 import BaseSnackBar from '@/components/common/base/snackBar/BaseSnackBar';
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = CreateEmotionCache();

@@ -23,7 +23,9 @@ const BaseSnackBar = () => {
       open={open}
       autoHideDuration={6000}
     >
-      <Alert variant="filled" severity="error">{message}</Alert>
+      <Alert variant="filled" severity="error">
+        {message}
+      </Alert>
     </Snackbar>
   );
 };
