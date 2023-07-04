@@ -6,22 +6,23 @@ import ListFloor from '@/components/list/listFloor/ListFloor';
 import localStyles from '@/components/list/List.module.scss';
 import { useRouter } from 'next/router';
 import { FiltersPlaces, ResponseListFloor } from '@/types/Places.types';
+import { useContext } from 'react';
 import Pagination from '@mui/material/Pagination';
 import Button from '@mui/material/Button';
 import ChatIcon from '@mui/icons-material/Chat';
 import BaseLoading from '@/components/common/base/loading/BaseLoading';
-import BaseSnackBar from '@/components/common/base/snackBar/BaseSnackBar';
+import { SnackbarContext } from '@/context/Snackbar.context';
 
 const List = () => {
   const [resultRequest, setResultRequest] = useState<ResponseListFloor | null>(
     null,
   );
   const { apiListFloors } = backend();
+  const { openSnackbar } = useContext(SnackbarContext);
   const router = useRouter();
   const { locationId, locationName, operation } = router.query;
   const [loading, setLoading] = useState(true);
   const initialized = useRef(false);
-  const [snackbarOpen, setSnackbarOpen] = useState(true);
   const [params, setParams] = useState({
     country: 'es',
     // locationId: '0-EU-ES-28-07-sadasd001-079',
@@ -57,6 +58,7 @@ const List = () => {
           setLoading(false);
           initialized.current = false;
         } catch (error) {
+          openSnackbar('se ha generado un error, ya se ha notificado al administrador');
           router.push('/');
         }
       };
@@ -81,15 +83,14 @@ const List = () => {
     },
   ];
 
-  const handleSnackbarClose = () => {
-    setSnackbarOpen(false);
-  };
-
   const onchangePage = (event: React.ChangeEvent<unknown>, value: number) => {
+    openSnackbar('se ha generado un error');
+    console.log();
     setParams({ ...params, numPage: value });
   };
 
   const handleSelectOperation = (event: any) => {
+    openSnackbar('se ha generado un error');
     setParams({ ...params, operation: event.target.value });
   };
 
@@ -165,11 +166,6 @@ const List = () => {
           </div>
         )}
       </div>
-      <BaseSnackBar
-        message="Error al hacer la busqueda de viviendas"
-        open={snackbarOpen}
-        onClose={handleSnackbarClose}
-      ></BaseSnackBar>
     </LayoutList>
   );
 };
