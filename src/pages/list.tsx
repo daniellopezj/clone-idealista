@@ -20,15 +20,15 @@ const List = () => {
   const { apiListFloors } = backend();
   const { openSnackbar } = useContext(SnackbarContext);
   const router = useRouter();
-  const { locationId, locationName, operation } = router.query;
+  const { locationId , locationName, operation } = router.query;
   const [loading, setLoading] = useState(true);
   const initialized = useRef(false);
   const [params, setParams] = useState({
     country: 'es',
     // locationId: '0-EU-ES-28-07-sadasd001-079',
-    locationId: locationId || '0-EU-ES-28-07-001-079',
-    locationName: locationName || 'Madrid, Madrid',
-    operation: operation || 'rent',
+    locationId: '0-EU-ES-28-07-001-079',
+    locationName: 'Madrid, Madrid',
+    operation:  'rent',
     numPage: 1,
     maxItems: 25,
     locale: 'es',
@@ -46,6 +46,17 @@ const List = () => {
     garden: false,
     petsPolicy: '',
   } as FiltersPlaces);
+
+  useEffect(() => {
+    if (router.isReady) {
+      setParams({
+        ...params,
+        locationId: locationId as string || params.locationId,
+        locationName: locationName as string || params.locationName,
+        operation: operation as "rent" | "sale" || params.operation,
+      });
+    }
+  }, [router.isReady]);
 
   useEffect(() => {
     if (!initialized.current) {
