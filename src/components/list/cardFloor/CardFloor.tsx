@@ -79,15 +79,18 @@ const CardFloor = ({ floor }: CardFloorProps) => {
                 Llamar
               </Button>
             </Link>
-            <Link href={`https://www.idealista.com/inmueble/${floor.propertyCode}`} target='_blank'>
-            <Button
-              className={localStyle.contactButton}
-              variant="text"
-              color="info"
-              startIcon={<CommentIcon />}
+            <Link
+              href={`https://www.idealista.com/inmueble/${floor.propertyCode}`}
+              target="_blank"
             >
-              Contact
-            </Button>
+              <Button
+                className={localStyle.contactButton}
+                variant="text"
+                color="info"
+                startIcon={<CommentIcon />}
+              >
+                Contact
+              </Button>
             </Link>
           </div>
           <div>
