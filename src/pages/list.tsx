@@ -3,6 +3,7 @@ import { backend } from '@/api/backend';
 import LayoutList from '@/layout/LayoutList';
 import Filters from '@/components/list/filters/Filters';
 import ListFloor from '@/components/list/listFloor/ListFloor';
+import EmptyList from '@/components/list/emptyList/EmptyList';
 import localStyles from '@/components/list/List.module.scss';
 import { useRouter } from 'next/router';
 import { FiltersPlaces, ResponseListFloor } from '@/types/Places.types';
@@ -161,7 +162,7 @@ const List = () => {
             </label>
           ))}
         </div>
-        {resultRequest && (
+        {resultRequest?.elementList.length ? (
           <div className={localStyles.listContent}>
             <ListFloor
               className={localStyles.listPlaces}
@@ -176,6 +177,10 @@ const List = () => {
               onChange={onchangePage}
               count={resultRequest.totalPages}
             />
+          </div>
+        ) : (
+          <div className={localStyles.listContent}>
+            <EmptyList placeName={params.locationName} />
           </div>
         )}
       </div>
