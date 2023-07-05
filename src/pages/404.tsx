@@ -2,7 +2,6 @@ import React from 'react';
 import localStyles from '@/components/notFound/notFound.module.scss';
 import SimpleNavbar from '@/components/common/simpleNavbar/SimpleNavbar';
 import Footer from '@/components/common/footer/Footer';
-import Alert from '@mui/material/Alert';
 import WarningIcon from '@mui/icons-material/Warning';
 import Link from 'next/link';
 const NofFoundPage = () => {

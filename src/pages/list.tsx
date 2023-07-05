@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import { backend } from '@/api/backend';
 import LayoutList from '@/layout/LayoutList';
 import Filters from '@/components/list/filters/Filters';
 import ListFloor from '@/components/list/listFloor/ListFloor';
+import EmptyList from '@/components/list/emptyList/EmptyList';
 import localStyles from '@/components/list/List.module.scss';
 import { useRouter } from 'next/router';
 import { FiltersPlaces, ResponseListFloor } from '@/types/Places.types';
-import { useContext } from 'react';
 import Pagination from '@mui/material/Pagination';
 import Button from '@mui/material/Button';
 import ChatIcon from '@mui/icons-material/Chat';
@@ -25,7 +25,6 @@ const List = () => {
   const initialized = useRef(false);
   const [params, setParams] = useState({
     country: 'es',
-    // locationId: '0-EU-ES-28-07-sadasd001-079',
     locationId: '0-EU-ES-28-07-001-079',
     locationName: 'Madrid, Madrid',
     operation: 'rent',
@@ -46,7 +45,6 @@ const List = () => {
     garden: false,
     petsPolicy: '',
   } as FiltersPlaces);
-
   useEffect(() => {
     if (router.isReady) {
       setParams({
@@ -59,7 +57,7 @@ const List = () => {
   }, [router.isReady]);
 
   useEffect(() => {
-    if (!initialized.current) {
+    if (!initialized.current && router.isReady) {
       initialized.current = true;
       const fetchData = async () => {
         setLoading(true);
@@ -138,7 +136,6 @@ const List = () => {
               filters={params}
             />
           )}
-          <Filters handleFilter={handleFilter} className="" filters={params} />
         </aside>
         <div className={localStyles.containerRadios}>
           {optionsRent.map((option) => (
@@ -161,7 +158,7 @@ const List = () => {
             </label>
           ))}
         </div>
-        {resultRequest && (
+        {resultRequest?.elementList.length ? (
           <div className={localStyles.listContent}>
             <ListFloor
               className={localStyles.listPlaces}
@@ -176,6 +173,10 @@ const List = () => {
               onChange={onchangePage}
               count={resultRequest.totalPages}
             />
+          </div>
+        ) : (
+          <div className={localStyles.listContent}>
+            {!loading && <EmptyList placeName={params.locationName} />}
           </div>
         )}
       </div>
