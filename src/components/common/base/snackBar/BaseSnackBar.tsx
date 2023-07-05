@@ -15,7 +15,7 @@ const BaseSnackBar = () => {
     setTimeout(() => {
       closeSnackbar();
     }, 6000);
-  }, []);
+  }, [open]);
 
   return (
     <Snackbar

@@ -65,14 +65,16 @@ const Contact = ({ className }: ContactPorps) => {
             >
               Portafolio
             </Link>
-            <Button
-              variant="contained"
-              color="primary"
-              disableElevation
-              startIcon={<ChatIcon />}
-            >
-              Contactame!
-            </Button>
+            <Link href="https://www.linkedin.com/in/dani-dev/" target="_blank">
+              <Button
+                variant="contained"
+                color="primary"
+                disableElevation
+                startIcon={<ChatIcon />}
+              >
+                Contactame!
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
