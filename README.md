@@ -12,15 +12,14 @@
 Clone idealista es un proyecto, desarrollado con `React`, `typeScript` y `next js`. contiene las mismas funcionalidades que el mayor buscador de viviendas en España [Idealista](https://www.idealista.com/).
 
 
-[Demo](https://clone-idealista.vercel.app/)
+ <a href="https://clone-idealista.vercel.app/" target="_blank">Demo</a>
 
+## Contacto 🚀|
 
-## Contacto 👌
-
-- Website: https://danidev.me/
-- LinkedIn: [@dani-dev](https://www.linkedin.com/in/dani-dev/)
-- Github: [@ldanidev](https://github.com/ldani-dev)
-- Twitter: [@ldanidev](https://twitter.com/ldanidev)
+- Website: <a href="https://danidev.me/" target="_blank">https://danidev.me/</a> 
+- LinkedIn:  <a href="https://www.linkedin.com/in/dani-dev/" target="_blank">@dani-dev</a>
+- Github: <a href="https://github.com/ldani-dev" target="_blank">@ldanidev</a>
+- Twitter: <a href="https://twitter.com/ldanidev" target="_blank">@ldanidev</a>
 
 ## Contenido
 
