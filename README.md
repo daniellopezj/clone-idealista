@@ -2,24 +2,22 @@
 
 # Clone idealista 
 
-
 ![React Version](https://img.shields.io/badge/react-v18.2.0-blue.svg)
 ![Next.js](https://img.shields.io/badge/Next.js-black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-blue)
 ![Open Source](https://img.shields.io/badge/Open%20Source-%20yes-green)
 
-
 Clone idealista es un proyecto, desarrollado con `React`, `typeScript` y `next js`. contiene las mismas funcionalidades que el mayor buscador de viviendas en España [Idealista](https://www.idealista.com/).
 
 
- <a href="https://clone-idealista.vercel.app/" target="_blank">Demo</a>
+[Demo](https://clone-idealista.vercel.app/)
 
-## Contacto 🚀|
+## Contacto 🚀
 
-- Website: <a href="https://danidev.me/" target="_blank">https://danidev.me/</a> 
-- LinkedIn:  <a href="https://www.linkedin.com/in/dani-dev/" target="_blank">@dani-dev</a>
-- Github: <a href="https://github.com/ldani-dev" target="_blank">@ldanidev</a>
-- Twitter: <a href="https://twitter.com/ldanidev" target="_blank">@ldanidev</a>
+- Website: https://danidev.me/
+- LinkedIn: [@dani-dev](https://www.linkedin.com/in/dani-dev/)
+- Github: [@ldanidev](https://github.com/ldani-dev)
+- Twitter: [@ldanidev](https://twitter.com/ldanidev)
 
 ## Contenido
 
