@@ -31,7 +31,7 @@ export default function Home() {
           name="keywords"
           content="fullStack, desarrollador freelance,HTML/CSS, JavaScript, TypeScript, angular, vue, react,Node js,, freelance, frontend, front-end, Desarrollador frontend, programador, Desarrollo web, Responsive web design, UI/UX"
         />
-        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:width" content="1000" />
         <meta property="og:image:height" content="600" />
         <meta property="og:type" content="website" />
         <meta name="type" content="website" />
