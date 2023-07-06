@@ -10,12 +10,16 @@ export default function Home() {
       <Head>
         <title>Clone Idealista — Casas y pisos, alquiler y venta</title>
         <meta
-          name="og:description"
+          name="description"
           content="Clone idealista desarrollado con Next js y react js. Sistema para la comercialización de viviendas en toda España. "
         />
         <meta
-          name="description"
+          property="og:description"
           content="Clone idealista desarrollado con Next js y react js. Sistema para la comercialización de viviendas en toda España. "
+        />
+        <meta
+          property="og:title"
+          content="Clone Idealista — Casas y pisos, alquiler y venta"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
@@ -29,10 +33,10 @@ export default function Home() {
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="600" />
-        <meta name="og:type" content="website" />
+        <meta property="og:type" content="website" />
         <meta name="type" content="website" />
         <meta name="site_name" content="clone-idealista.vercel.app" />
-        <meta name="og:url" content="https://clone-idealista.vercel.app" />
+        <meta property="og:url" content="https://clone-idealista.vercel.app" />
         <link rel="canonical" href="https://clone-idealista.vercel.app" />
         <link
           rel="icon"
