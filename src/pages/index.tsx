@@ -13,9 +13,11 @@ export default function Home() {
           name="description"
           content="Clone idealista desarrollado con Next js y react js. Sistema para la comercialización de viviendas en toda España. "
         />
+        <meta name="author" content="Dani Lopez | danidev" />
+
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-
+        <meta name="language" content="es"></meta>
         <meta
           name="keywords"
           content="fullStack, desarrollador freelance,HTML/CSS, JavaScript, TypeScript, angular, vue, react,Node js,, freelance, frontend, front-end, Desarrollador frontend, programador, Desarrollo web, Responsive web design, UI/UX"
@@ -56,7 +58,10 @@ export default function Home() {
         <meta property="twitter:image:height" content="600" />
         <meta property="twitter:type" content="website" />
 
-        <meta property="twitter:url" content="https://clone-idealista.vercel.app" />
+        <meta
+          property="twitter:url"
+          content="https://clone-idealista.vercel.app"
+        />
         <link rel="canonical" href="https://clone-idealista.vercel.app" />
         <link
           rel="icon"
