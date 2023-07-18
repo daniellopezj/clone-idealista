@@ -48,14 +48,11 @@
 
 .footerSocialLink {
   cursor: pointer;
-  margin-right: 1rem;
-  padding: 7px 0px;
+  padding: 7px ;
   border-radius: 50%;
-  // color: #8e8f8c;
-  width: 22px;
-  height: 25px;
+  
   svg {
-    font-size: 1.7rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -94,7 +91,7 @@
 
 .footerSocialButtons {
   display: flex;
-  gap: 0 15px;
+  gap: 0 20px;
 }
 
 @media (max-width: 599px) {
