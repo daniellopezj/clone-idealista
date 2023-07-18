@@ -5,11 +5,12 @@
   background-size: cover;
   justify-content: center;
   width: 100%;
+
 }
 
 @media (max-width: 599px) {
   .customImage {
-    height: 180px;
+    aspect-ratio: 16/9;
   }
 }
 
