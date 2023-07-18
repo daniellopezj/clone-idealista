@@ -22,7 +22,6 @@ export default function Home() {
           name="keywords"
           content="fullStack, desarrollador freelance,HTML/CSS, JavaScript, TypeScript, angular, vue, react,Node js,, freelance, frontend, front-end, Desarrollador frontend, programador, Desarrollo web, Responsive web design, UI/UX"
         />
-
         <meta name="type" content="website" />
         <meta name="site_name" content="clone-idealista.vercel.app" />
         <meta
@@ -42,25 +41,18 @@ export default function Home() {
         <meta property="og:type" content="website" />
 
         <meta property="og:url" content="https://clone-idealista.vercel.app" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
-          property="twitter:title"
+          name="twitter:title"
           content="Clone Idealista — Casas y pisos, alquiler y venta"
         />
         <meta
-          property="twitter:description"
+          name="twitter:description"
           content="Clone idealista desarrollado con Next js y react js. Sistema para la comercialización de viviendas en toda España. "
         />
         <meta
-          property="twitter:image"
+          name="twitter:image"
           content="https://clone-idealista.vercel.app/mainView.webp"
-        />
-        <meta property="twitter:image:width" content="1200" />
-        <meta property="twitter:image:height" content="600" />
-        <meta property="twitter:type" content="website" />
-
-        <meta
-          property="twitter:url"
-          content="https://clone-idealista.vercel.app"
         />
         <link rel="canonical" href="https://clone-idealista.vercel.app" />
         <link

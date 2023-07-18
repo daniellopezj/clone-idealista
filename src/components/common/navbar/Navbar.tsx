@@ -27,6 +27,7 @@ const Navbar = () => {
             variant="outlined"
             color="primary"
             disableElevation
+            aria-label="contact"
             startIcon={
               <ChatIcon className={localStyles.iconContact} color="primary" />
             }
@@ -41,6 +42,7 @@ const Navbar = () => {
             variant="text"
             color="primary"
             disableElevation
+            aria-label="profile"
             startIcon={
               <PersonIcon color="primary" className={localStyles.iconProfile} />
             }
