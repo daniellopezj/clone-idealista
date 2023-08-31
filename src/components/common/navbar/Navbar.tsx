@@ -35,7 +35,7 @@ const Navbar = () => {
             contactame
           </Button>
         </Link>
-        <Link href="https://danidev.me/" target="_blank">
+        <Link href="https://daniellopezj.com/" target="_blank">
           <Button
             disableRipple
             className={localStyles.customButtonProfile}

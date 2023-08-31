@@ -49,19 +49,19 @@ export const socialIcons: SocialIcon[] = [
   {
     id: 0,
     icon: LinkedInIcon,
-    link: 'https://www.linkedin.com/in/dani-dev/',
+    link: 'https://www.linkedin.com/in/daniel-lopezj/',
     color: '#0e76a8',
   },
   {
     id: 1,
     icon: GitHubIcon,
-    link: 'https://github.com/ldani-dev',
+    link: 'https://github.com/daniellopezj',
     color: '#000000',
   },
   {
     id: 2,
     icon: TwitterIcon,
-    link: 'https://twitter.com/ldanidev',
+    link: 'https://twitter.com/daniellopezj_',
     color: '#00ACEE',
   },
 ];

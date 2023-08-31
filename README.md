@@ -14,10 +14,10 @@ Clone idealista es un proyecto, desarrollado con `React`, `typeScript` y `next j
 
 ## Contacto 🚀
 
-- Website: https://danidev.me/
-- LinkedIn: [@dani-dev](https://www.linkedin.com/in/dani-dev/)
-- Github: [@ldanidev](https://github.com/ldani-dev)
-- Twitter: [@ldanidev](https://twitter.com/ldanidev)
+[sitio web](https://www.daniellopezj.com/)
+| [LinkedIn](https://www.linkedin.com/in/daniel-lopezj/)
+| [Github](https://github.com/daniellopezj)
+| [Twitter](https://twitter.com/daniellopezj_)
 
 ## Contenido
 

@@ -65,7 +65,7 @@ const Footer = ({ className }: any) => {
             <span> Creado por </span>
             <Link
               className={localStyles.footerPersonalLink}
-              href="https://github.com/ldani-dev"
+              href="https://github.com/daniellopezj"
               target="_blank"
             >
               Daniel López
