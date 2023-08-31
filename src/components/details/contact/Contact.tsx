@@ -60,12 +60,12 @@ const Contact = ({ className }: ContactPorps) => {
           <div className={localStyle.contactActions}>
             <Link
               className={localStyle.contactPortfolio}
-              href={'https://danidev.me/'}
+              href={'https://daniellopezj.com/'}
               target="_blanck"
             >
               Portafolio
             </Link>
-            <Link href="https://www.linkedin.com/in/dani-dev/" target="_blank">
+            <Link href="https://www.linkedin.com/in/daniel-lopezj/" target="_blank">
               <Button
                 variant="contained"
                 color="primary"

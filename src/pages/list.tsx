@@ -95,8 +95,6 @@ const List = () => {
   ];
 
   const onchangePage = (event: React.ChangeEvent<unknown>, value: number) => {
-    openSnackbar('se ha generado un error');
-    console.log();
     setParams({ ...params, numPage: value });
   };
 

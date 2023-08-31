@@ -13,7 +13,7 @@ export default function Home() {
           name="description"
           content="Clone idealista desarrollado con Next js y react js. Sistema para la comercialización de viviendas en toda España. "
         />
-        <meta name="author" content="Dani Lopez | danidev" />
+        <meta name="author" content="Daniel Lopez " />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
